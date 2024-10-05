@@ -1,2 +1,2 @@
 # My homeworks
-View by (link)[https://vikensia.github.io/homework/]
+View by [link](https://vikensia.github.io/homework/)
