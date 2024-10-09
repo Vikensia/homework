@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic form</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <label for="full-name"></label>
+        <input type="text" name="full-name" id="full-name">
+        <br>
+        <label for="email"></label>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="password"></label>
+        <input type="password" name="password" id="password">
+        <br>
+        <label for="password-repeat"></label>
+        <input type="password" name="password-repeat" id="password-repeat">
+        <br>
+        <span></span>
+        <label><input type="radio" name="sex" value="man" checked></label>
+        <label><input type="radio" name="sex" value="woman"></label>
+        <br>
+        <label for="age"></label>
+        <input type="number" name="age" id="age" min="1" max="120">
+        <br>
+        <select name="course" id="course">
+            <option value="front-end">Front-End</option>
+            <option value="back-end">Back-End</option>
+            <option value="pm">Project Management</option>
+            <option value="qa">QA Manual</option>
+        </select>
+        <br>
+        <label for="address"></label>
+        <textarea name="address" id="address" cols="30" rows="4"></textarea>
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree"></label>
+        <button type="reset"></button><button type="submit"></button>
+    </form>
+</body>
+
+</html>
