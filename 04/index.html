@@ -2,45 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic form</title>
+	<style>
+		.form-row {
+			margin-bottom: 10px;
+		}
+
+		.form-row label {
+			display: inline-block;
+			width: 200px;
+		}
+
+		span {
+			display: inline-block;
+			width: 200px;
+			margin-bottom: 10px;
+		}
+
+		.agree label {
+			width: 400px;
+		}
+
+		button {
+			margin-left: 10px;
+		}
+	</style>
 </head>
 
 <body>
-    <form action="#" method="post">
-        <label for="full-name"></label>
-        <input type="text" name="full-name" id="full-name">
-        <br>
-        <label for="email"></label>
-        <input type="email" name="email" id="email">
-        <br>
-        <label for="password"></label>
-        <input type="password" name="password" id="password">
-        <br>
-        <label for="password-repeat"></label>
-        <input type="password" name="password-repeat" id="password-repeat">
-        <br>
-        <span></span>
-        <label><input type="radio" name="sex" value="man" checked></label>
-        <label><input type="radio" name="sex" value="woman"></label>
-        <br>
-        <label for="age"></label>
-        <input type="number" name="age" id="age" min="1" max="120">
-        <br>
-        <select name="course" id="course">
-            <option value="front-end">Front-End</option>
-            <option value="back-end">Back-End</option>
-            <option value="pm">Project Management</option>
-            <option value="qa">QA Manual</option>
-        </select>
-        <br>
-        <label for="address"></label>
-        <textarea name="address" id="address" cols="30" rows="4"></textarea>
-        <input type="checkbox" name="agree" id="agree">
-        <label for="agree"></label>
-        <button type="reset"></button><button type="submit"></button>
-    </form>
+	<form action="#" method="post" id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+		<div class="form-row">
+			<label for="full-name">Повне ім'я</label>
+			<input type="text" name="full-name" id="full-name">
+		</div>
+		<div class="form-row">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email">
+		</div>
+		<div class="form-row">
+			<label for="password">Пароль</label>
+			<input type="password" name="password" id="password">
+		</div>
+		<div class="form-row">
+			<label for="password-repeat">Пароль ще раз</label>
+			<input type="password" name="password-repeat" id="password-repeat">
+		</div>
+		<div class="form-row-sex">
+			<span>Стать</span>
+			<label><input type="radio" name="sex" value="man" checked>чоловіча</label>
+			<label><input type="radio" name="sex" value="woman">жіноча</label>
+		</div>
+		<div class="form-row">
+			<label for="age">Вік</label>
+			<input type="number" name="age" id="age" min="1" max="120">
+		</div>
+		<div class="form-row">
+			<label for="course">Курс</label>
+			<select name="course" id="course">
+				<option value="front-end">Front-End</option>
+				<option value="back-end">Back-End</option>
+				<option value="pm">Project Management</option>
+				<option value="qa">QA Manual</option>
+			</select>
+		</div>
+		<div class="form-row">
+			<label for="address"></label>
+			<textarea name="address" id="address" cols="30" rows="4">Країна, регіон, місто/селище, вулиця</textarea>
+		</div>
+		<div class="form-row agree">
+			<input type="checkbox" name="agree" id="agree">
+			<label for="agree">Я погоджуюсь з обробкою персональних даних</label>
+		</div>
+		<div class="form-row">
+			<button type="reset">Очистити форму</button><button type="submit">Зареєструватися</button>
+		</div>
+	</form>
+	<div>
+		<a href="extra.html">Екстра</a>
+	</div>
 </body>
 
 </html>
