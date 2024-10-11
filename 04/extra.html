@@ -2,13 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extra form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Extra form</title>
+	<style>
+		form {
+			width: 500px;
+			margin-bottom: 10px;
+		}
+
+		.form-row {
+			margin-bottom: 10px;
+		}
+
+		.form-row label,
+		.form-row div {
+			display: inline-block;
+			width: 200px;
+		}
+
+		.agree label {
+			width: 400px;
+		}
+
+		button {
+			margin-left: 10px;
+		}
+	</style>
 </head>
 
 <body>
-
+	<form action="#" method="post" id="my_form" onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;" enctype="multipart/form-data">
+		<fieldset>
+			<legend>Обов'язкові дані</legend>
+			<input type="image" src="assets/images/hotel-logo.png" alt="logo">
+			<div class="form-row">
+				<label for="full-name">Повне ім'я</label>
+				<input type="text" name="full-name" id="full-name" required>
+			</div>
+			<div class="form-row">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" required>
+			</div>
+			<div class="form-row">
+				<label for="password">Пароль</label>
+				<input type="password" name="password" id="password" required>
+			</div>
+			<div class="form-row">
+				<label for="age">Вік</label>
+				<input type="number" name="age" id="age" min="1" max="120" required>
+			</div>
+			<div class="form-row">
+				<label><input type="radio" name="sex" value="man" checked>чоловік</label>
+				<label><input type="radio" name="sex" value="woman">жінка</label>
+			</div>
+			<div class="form-row">
+				<label for="phone">Телефон</label>
+				<input type="tel" name="phone" id="phone" placeholder="080-111-11-11" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+			</div>
+			<div class="form-row">
+				<div>Хочу собі такий номер</div>
+				<input list="rooms" name="room" required>
+				<datalist id="rooms">
+					<option value="одномісний">
+					<option value="двомісний: з односпальними ліжками">
+					<option value="двомісний: з двоспальним ліжком">
+					<option value="сімейний: 4 односпальних ліжка">
+					<option value="люкс">
+				</datalist>
+			</div>
+			<div class="form-row">
+				<label for="date">Бажана дата заселення</label>
+				<input type="date" name="date" id="date" required>
+			</div>
+			<div class="form-row">
+				<label for="leaving-time">Дата та час виїзду</label>
+				<input type="datetime-local" id="leaving-time" name="leaving-time" required>
+			</div>
+			<div class="form-row">
+				<label for="id-card">Додайте документ, що посвічує особу</label>
+				<input type="file" id="id-card" name="id-card" required>
+			</div>
+			<div class="form-row">
+				<label for="customer-range">Кількість людей, що планує заселитися</label>
+				<span>1</span><input type="range" id="customer-range" name="customer-range" value="1" min="1" max="5"><span>5</span>
+			</div>
+			<div class="form-row">
+				<label for="social">Посилання на наш сайт</label>
+				<input type="url" id="social" name="social" value="https://www.booking.com/index.uk.html" readonly>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Додатково</legend>
+			<div class="form-row">
+				<label for="breakfast">На сніданок я бажаю</label>
+				<select name="breakfast" id="breakfast" size="8" multiple>
+					<optgroup label="Страви">
+						<option value="egg">Яєшня</option>
+						<option value="oatmeal">Вівсянка</option>
+						<option value="puree">Пюре</option>
+					</optgroup>
+					<optgroup label="Напої">
+						<option value="tea">Чай</option>
+						<option value="coffee">Кава</option>
+						<option value="juice">Сік</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="form-row">
+				<label for="address"></label>
+				<textarea name="address" id="address" cols="30" rows="4">Я приїхав з... країна/місто</textarea>
+			</div>
+			<div class="form-row">
+				<label for="cleaning-time">Півчасове прибирання починати о такій годині</label>
+				<input type="time" name="cleaning-time" id="cleaning-time">
+			</div>
+			<div class="form-row">
+				<label for="walls">Бажаний колір постільної білизни</label>
+				<input type="color" name="walls" id="walls">
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Знижки</legend>
+			<div class="form-row">
+				<label for="birthday-month">Вкажіть місяць народження, аби отримати знижку на заселення до Дня народження</label>
+				<input type="month" name="birthday-month" id="birthday-month">
+			</div>
+			<div class="form-row">
+				<label for="week">Якщо відпустка для вас рідкісне задоволення - вкажіть бажаний тиждень заселення та отримайте подарунок</label>
+				<input type="week" id="week" name="week">
+			</div>
+			<div class="form-row agree">
+				<input type="checkbox" name="agree" id="agree">
+				<label for="agree">Я погоджуюсь з обробкою персональних даних</label>
+			</div>
+			<div class="form-row">
+				<button type="reset">Очистити форму</button><button type="submit">Зареєструватися</button>
+			</div>
+			<input type="hidden" name="order-id" value="987456">
+		</fieldset>
+	</form>
+	<form action="https://www.google.com/search" target="_blank">
+		<label for="q">Знайти у гуглі визначні місця</label>
+		<input type="search" name="q" id="q">
+		<button type="submit">Пошук</button>
+	</form>
+	<div>
+		<a href="index.html">Базова форма</a>
+	</div>
 </body>
 
 </html>
