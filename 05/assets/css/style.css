@@ -1,0 +1,145 @@
+:root {
+    --text-color: #070707;
+    --sub-color: #828282;
+    --bg-color: #F6F6F6;
+    --star-color: brightness(0) saturate(100%) invert(96%) sepia(4%) saturate(0%) hue-rotate(227deg) brightness(114%) contrast(80%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125rem;
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    padding-top: 95px;
+    font-size: 2.125rem;
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+.container {
+    width: min(90%, 970px);
+    margin-inline: auto;
+}
+
+/*Header*/
+header .container {
+    padding: 25px 0 24px;
+    border-bottom: 1px solid #828282;
+}
+
+.main-menu {
+    text-align: center;
+}
+
+.main-menu li {
+    display: inline;
+    margin: 18px;
+    line-height: 30px;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: var(--sub-color);
+    letter-spacing: 0.0225rem;
+}
+
+.main-menu li a:hover {
+    color: var(--text-color);
+}
+
+/*First block*/
+h1 {
+    margin-top: 12px;
+    color: var(--text-color);
+    font-size: 3rem;
+    margin-bottom: 45px;
+}
+
+/*About me*/
+#about-me {
+    background-color: var(--bg-color);
+}
+
+#about-me h2 {
+    margin-bottom: 45px;
+    line-height: 2.8rem;
+}
+
+#about-me p {
+    margin-bottom: 30px;
+    line-height: 1.563rem;
+}
+
+#about-me p:last-of-type {
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+/*Skills*/
+#skills h2 {
+    line-height: 3.5rem;
+    margin-bottom: 9px;
+}
+
+#skills p {
+    margin-bottom: 50px;
+}
+
+.skills-list {
+    margin-bottom: 100px;
+}
+
+.skills-list li {
+    display: inline-block;
+    width: 170px;
+    height: 230px;
+    text-align: center;
+    margin-right: 92px;
+}
+
+.skills-list li:last-child {
+    margin-right: 0;
+    margin-left: -1px;
+}
+
+.skills-list .icon {
+    margin-bottom: 20px;
+}
+
+.skills-list figcaption {
+    color: var(--sub-color);
+    height: 38px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.0175rem;
+    margin-inline: 38px;
+    margin-bottom: 60px;
+}
+
+.stars img:not(:last-child) {
+    margin-right: 4px;
+}
+
+.no-star {
+    filter: var(--star-color);
+}
+
+/*Portfolio*/
+#portfolio {
+    background-color: var(--bg-color);
+}
