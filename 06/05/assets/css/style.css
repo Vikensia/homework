@@ -229,6 +229,11 @@ h1 {
 .social-list li {
     display: inline;
     margin-right: 44px;
+    opacity: .7;
+}
+
+.social-list li:hover {
+    opacity: 1;
 }
 
 .social-list li:last-child {
