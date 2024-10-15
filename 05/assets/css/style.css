@@ -161,6 +161,14 @@ h1 {
     margin-bottom: 70px;
 }
 
+.link a:link,
+.link a:visited,
+.link a:hover,
+.link a:active {
+    color: var(--text-color);
+}
+
+
 #portfolio li:nth-child(2) .link {
     margin-bottom: 69px;
 }
