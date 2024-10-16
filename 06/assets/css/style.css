@@ -70,20 +70,18 @@ span {
     vertical-align: middle;
 }
 
-/*
-span::before {
-    content: '( ';
-}
-
-span::after {
-    content: ' )';
-}*/
-
 li {
     height: 68px;
     padding: 0 15px;
-    line-height: 68px;
     transition: all .1s ease-in;
+}
+
+label {
+    display: inline-block;
+    width: 760px;
+    padding: 14px;
+    padding-top: 16px;
+
 }
 
 input[type="checkbox"] {
@@ -105,7 +103,7 @@ input[type="checkbox"]+label::before {
     background-color: #fff;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 18px;
 }
 
 input[type="checkbox"]:checked+label::after {
@@ -118,7 +116,7 @@ input[type="checkbox"]:checked+label::after {
     position: absolute;
     transform: rotate(-45deg);
     left: 6px;
-    top: 5px;
+    top: 23px;
 }
 
 li:nth-child(odd) {
@@ -153,24 +151,6 @@ li:has(input[type="checkbox"]:checked) {
     color: var(--text-checked);
 }
 
-/*
-li:has(input[type="checkbox"]:checked)::after {
-    content: '';
-    display: inline-block;
-    width: 500px;
-    border-bottom: 1px solid var(--text-checked);
-    position: absolute;
-    left: -195px;
-    top: 8px;
-}
-
-
-/*
-input[type="checkbox"]:checked+label {
-    text-decoration: line-through;
-}
-*/
-
 li:has(input[type="checkbox"]:checked) label span::after {
     content: '';
     display: inline-block;
@@ -178,7 +158,7 @@ li:has(input[type="checkbox"]:checked) label span::after {
     border-bottom: 1px solid var(--text-checked);
     position: absolute;
     left: 40px;
-    top: 15px;
+    top: 33px;
 }
 
 main p {
