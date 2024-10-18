@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #FFF;
+    font-family: "Lucida Sans Unicode";
+    border: 25px solid #2B81AC;
+    background: #39C;
+
+}
+
+main {
+    margin-inline: auto;
+    padding: 35px 0 94px;
+    width: min(90%, 1170px);
+}
+
+h1 {
+    font-size: 1.3125rem;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+ul {
+    list-style: none;
+    font-size: 0;
+    border: 1px solid #FFF;
+    margin-bottom: 35px;
+    background-color: #FFF;
+    cursor: url('../images/cursor.svg'), pointer;
+}
+
+li {
+    display: inline-block;
+    border: 2px solid #FFF;
+    font-size: 1.375rem;
+    width: 25%;
+    height: 147px;
+    text-align: center;
+    padding-top: 26px;
+    transition: all .1s ease-in;
+}
+
+.lisbon,
+.san-francisco {
+    width: 50%;
+}
+
+.sydney {
+    width: 100%;
+}
+
+.lisbon {
+    background: #39C;
+}
+
+.paris {
+    background: #3CC;
+}
+
+.belgrade {
+    background: #969;
+}
+
+.venice {
+    background: #C24747;
+}
+
+.tel-avive {
+    background: #E2674A;
+}
+
+.cair {
+    background: #FC6;
+}
+
+.new-york {
+    background: #9C9;
+}
+
+.new-delhi {
+    background: #699;
+}
+
+.san-francisco {
+    background: #C69;
+}
+
+.tokyo {
+    background: #396;
+}
+
+.sydney {
+    background: #669;
+}
+
+.weather {
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 1.375rem;
+    margin-top: 4px;
+}
+
+.wi {
+    font-size: 2.625rem;
+}
+
+.lisbon .wi,
+.cair .wi {
+    margin-left: 11px;
+}
+
+.paris .wi {
+    margin-left: 10px;
+}
+
+.belgrade .wi,
+.sydney .wi {
+    margin-left: 13px;
+}
+
+.venice .wi {
+    margin-left: 9px;
+}
+
+.tel-avive .wi {
+    margin-left: 17px;
+}
+
+.new-york .wi,
+.new-delhi .wi {
+    margin-left: 12px;
+}
+
+.san-francisco .wi {
+    margin-left: 15px;
+}
+
+.tokyo .wi {
+    margin-left: 27px;
+}
+
+span {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/*
+li:not(:hover) {
+    opacity: .7;
+}
+    */
+/*
+li:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    opacity: .7;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+*/
+ul:has(li:hover) li:not(:hover) {
+    opacity: .7;
+}
