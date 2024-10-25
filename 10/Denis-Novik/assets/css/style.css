@@ -1,0 +1,247 @@
+:root {
+    --text-color: #070707;
+    --sub-color: #828282;
+    --bg-color: #F6F6F6;
+    --star-color: brightness(0) saturate(100%) invert(96%) sepia(4%) saturate(0%) hue-rotate(227deg) brightness(114%) contrast(80%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125rem;
+}
+
+ul {
+    list-style: none;
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+.section__heading,
+.footer__heading {
+    padding-top: 95px;
+    font-size: 2.125rem;
+}
+
+.container {
+    width: min(90%, 970px);
+    margin-inline: auto;
+}
+
+/*Header*/
+.header .container {
+    padding: 25px 0 24px;
+    border-bottom: 1px solid #828282;
+}
+
+.main-menu {
+    text-align: center;
+}
+
+.main-menu__item {
+    display: inline;
+    margin: 18px;
+    line-height: 30px;
+}
+
+.main-menu__item-link {
+    text-decoration: none;
+    color: var(--sub-color);
+    letter-spacing: 0.0225rem;
+}
+
+.main-menu__item-link:hover {
+    color: var(--text-color);
+    text-shadow:
+        1px 0 1px #000,
+        0 1px 1px #000;
+}
+
+/*First block*/
+.main-heading {
+    margin-top: 12px;
+    color: var(--text-color);
+    font-size: 3rem;
+    margin-bottom: 45px;
+}
+
+/*About me*/
+.section__bg_grey {
+    background-color: var(--bg-color);
+}
+
+.about-me .section__heading {
+    margin-bottom: 45px;
+    line-height: 2.8rem;
+}
+
+.about-me .section__text {
+    margin-bottom: 30px;
+    line-height: 1.563rem;
+}
+
+.about-me .section__text:last-of-type {
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+/*Skills*/
+.skills .section__heading {
+    line-height: 3.5rem;
+    margin-bottom: 9px;
+}
+
+.skills .section__heading-group-text {
+    margin-bottom: 50px;
+}
+
+.skills-list {
+    margin-bottom: 96px;
+}
+
+.skills-list__item {
+    display: inline-block;
+    width: 170px;
+    height: 230px;
+    text-align: center;
+    margin-right: 92px;
+}
+
+.skills-list__item:last-child {
+    margin-right: 0;
+    margin-left: -1px;
+}
+
+.skills-list .icon {
+    margin-bottom: 20px;
+}
+
+.skills-list__item-caption {
+    color: var(--sub-color);
+    height: 38px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.0175rem;
+    margin-inline: 38px;
+    margin-bottom: 60px;
+}
+
+.skills-list__item-ratio .star:not(:last-child) {
+    margin-right: 4px;
+}
+
+.star_empty {
+    filter: var(--star-color);
+}
+
+/*Portfolio*/
+.portfolio .section__heading {
+    line-height: 3.6rem;
+    margin-bottom: 38px;
+}
+
+.portfolio-list__item-preview {
+    margin-bottom: 35px;
+}
+
+.portfolio-list__item-link-container {
+    width: 260px;
+    line-height: 25px;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.portfolio-list__item-link:link,
+.portfolio-list__item-link:visited,
+.portfolio-list__item-link:hover,
+.portfolio-list__item-link:active {
+    color: var(--text-color);
+}
+
+
+.portfolio-list__item:nth-child(2) .portfolio-list__item-link-container {
+    margin-bottom: 69px;
+}
+
+.portfolio-list__item:last-child .portfolio-list__item-link-container {
+    margin-bottom: 0;
+    padding-bottom: 100px;
+}
+
+/*Contacts*/
+.footer__heading {
+    line-height: 54px;
+    margin-bottom: 10px;
+}
+
+.footer__heading-group-text {
+    line-height: 25px;
+    margin-bottom: 56px;
+}
+
+.btn {
+    text-align: center;
+    color: #FFF;
+    font-weight: 700;
+    letter-spacing: 0.1125rem;
+    background-color: #000;
+    display: inline-block;
+    height: 44px;
+    line-height: 40px;
+    border-radius: 22px;
+    padding: 0 16px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.125rem;
+    cursor: pointer;
+    border: 2px solid black;
+    margin-bottom: 28px;
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+.contacts {
+    margin-inline: auto;
+    width: 312px;
+    text-align: center;
+}
+
+.social-list {
+    height: 40px;
+    margin-bottom: 62px;
+}
+
+.social-list__item {
+    display: inline;
+    margin-right: 44px;
+    opacity: .7;
+}
+
+.social-list__item:hover {
+    opacity: 1;
+}
+
+.social-list__item:last-child {
+    margin: 0;
+}
+
+.footer-message {
+    width: 200px;
+    margin-inline: auto;
+    color: var(--sub-color);
+    font-size: 0.875rem;
+    margin-bottom: 100px;
+    text-align: center;
+}
