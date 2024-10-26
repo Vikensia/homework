@@ -13,8 +13,9 @@
 
 body {
     color: var(--text-color);
-    font-family: "Open Sans", sans-serif;
+    font-family: "Gilroy", sans-serif;
     font-size: 1.125rem;
+    font-weight: 500;
 }
 
 ul {
@@ -26,54 +27,86 @@ p {
     text-align: center;
 }
 
+.container {
+    width: min(90%, 945px);
+    margin-inline: auto;
+}
+
 .section {
-    padding-top: 95px;
+    padding-top: 120px;
 }
 
 .heading {
     font-size: 2.125rem;
 }
 
-.container {
-    width: min(90%, 970px);
-    margin-inline: auto;
-}
-
 /*Header*/
 .header .container {
-    padding: 25px 0 24px;
+    padding: 32px 0 36px;
     border-bottom: 1px solid #828282;
 }
 
 .main-menu {
-    text-align: center;
-}
-
-.main-menu__item {
-    display: inline;
-    margin: 18px;
-    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.01rem;
+    letter-spacing: 0.0222rem;
 }
 
 .main-menu__link {
     text-decoration: none;
     color: var(--sub-color);
-    letter-spacing: 0.0225rem;
 }
 
 .main-menu__link:hover {
     color: var(--text-color);
     text-shadow:
-        1px 0 1px #000,
-        0 1px 1px #000;
+        0px 0 1px #000,
+        0 0px 1px #000;
 }
 
 /*First block*/
-.main-heading {
-    margin-top: 12px;
+.first-block .container {
+    padding-top: 34px;
+    padding-bottom: 99px;
+}
+
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 41px;
+}
+
+.info-block__heading {
     color: var(--text-color);
-    font-size: 3rem;
-    margin-bottom: 45px;
+    font-size: 2.95869rem;
+    width: 125px;
+    line-height: 3.55rem;
+}
+
+.info-block__text {
+    text-align: left;
+    position: relative;
+    bottom: 12px;
+    right: 2px;
+}
+
+.info-block__lang {
+    transform: translateX(36px) translateY(23px);
+    rotate: -90deg;
+}
+
+.info-block__link {
+    color: #000;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.lang_current {
+    color: var(--sub-color);
 }
 
 /*About me*/
@@ -95,6 +128,8 @@ p {
     margin: 0;
     padding-bottom: 100px;
 }
+
+
 
 /*Skills*/
 .skills .section-heading__title {
