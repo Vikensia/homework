@@ -26,9 +26,11 @@ p {
     text-align: center;
 }
 
-.section__heading,
-.footer__heading {
+.section {
     padding-top: 95px;
+}
+
+.heading {
     font-size: 2.125rem;
 }
 
@@ -53,13 +55,13 @@ p {
     line-height: 30px;
 }
 
-.main-menu__item-link {
+.main-menu__link {
     text-decoration: none;
     color: var(--sub-color);
     letter-spacing: 0.0225rem;
 }
 
-.main-menu__item-link:hover {
+.main-menu__link:hover {
     color: var(--text-color);
     text-shadow:
         1px 0 1px #000,
@@ -95,12 +97,12 @@ p {
 }
 
 /*Skills*/
-.skills .section__heading {
+.skills .section-heading__title {
     line-height: 3.5rem;
     margin-bottom: 9px;
 }
 
-.skills .section__heading-group-text {
+.skills .section-heading__text {
     margin-bottom: 50px;
 }
 
@@ -179,14 +181,16 @@ p {
 }
 
 /*Contacts*/
-.footer__heading {
-    line-height: 54px;
-    margin-bottom: 10px;
+footer {
+    padding-top: 99px;
 }
 
-.footer__heading-group-text {
-    line-height: 25px;
-    margin-bottom: 56px;
+.footer-heading {
+    margin-bottom: 57px;
+}
+
+.footer-heading__title {
+    margin-bottom: 15px;
 }
 
 .btn {
