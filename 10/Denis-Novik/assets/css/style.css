@@ -32,10 +32,6 @@ p {
     margin-inline: auto;
 }
 
-.section {
-    padding-top: 120px;
-}
-
 .heading {
     font-size: 2.125rem;
 }
@@ -110,56 +106,54 @@ p {
 }
 
 /*About me*/
+.section.about-me {
+    padding-top: 115px;
+    padding-bottom: 109px;
+}
+
 .section__bg_grey {
     background-color: var(--bg-color);
 }
 
 .about-me .section__heading {
-    margin-bottom: 45px;
-    line-height: 2.8rem;
+    margin-bottom: 24px;
 }
 
 .about-me .section__text {
-    margin-bottom: 30px;
-    line-height: 1.563rem;
+    margin-bottom: 46px;
 }
 
 .about-me .section__text:last-of-type {
     margin: 0;
-    padding-bottom: 100px;
 }
-
-
 
 /*Skills*/
-.skills .section-heading__title {
-    line-height: 3.5rem;
-    margin-bottom: 9px;
+
+.section.skills {
+    padding-top: 86px;
+    padding-bottom: 114px;
 }
 
-.skills .section-heading__text {
-    margin-bottom: 50px;
+.skills .section__heading {
+    margin-bottom: 59px;
+}
+
+.skills .section__text {
+    margin-bottom: 89px;
 }
 
 .skills-list {
-    margin-bottom: 96px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
+    grid-gap: 90px;
 }
 
 .skills-list__item {
-    display: inline-block;
-    width: 170px;
-    height: 230px;
     text-align: center;
-    margin-right: 92px;
-}
-
-.skills-list__item:last-child {
-    margin-right: 0;
-    margin-left: -1px;
 }
 
 .skills-list .icon {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .skills-list__item-caption {
@@ -167,13 +161,14 @@ p {
     height: 38px;
     font-size: 0.875rem;
     font-weight: 700;
-    letter-spacing: 0.0175rem;
     margin-inline: 38px;
-    margin-bottom: 60px;
+    margin-bottom: 34px;
 }
 
-.skills-list__item-ratio .star:not(:last-child) {
-    margin-right: 4px;
+.skills-list__item-ratio {
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .star_empty {
@@ -181,21 +176,24 @@ p {
 }
 
 /*Portfolio*/
+.section.portfolio {
+    padding-top: 108px;
+    padding-bottom: 96px;
+}
+
 .portfolio .section__heading {
-    line-height: 3.6rem;
-    margin-bottom: 38px;
+    margin-bottom: 56px;
 }
 
 .portfolio-list__item-preview {
-    margin-bottom: 35px;
+    margin-bottom: 36px;
 }
 
 .portfolio-list__item-link-container {
-    width: 260px;
     line-height: 25px;
     margin-inline: auto;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 101px;
 }
 
 .portfolio-list__item-link:link,
@@ -205,14 +203,8 @@ p {
     color: var(--text-color);
 }
 
-
-.portfolio-list__item:nth-child(2) .portfolio-list__item-link-container {
-    margin-bottom: 69px;
-}
-
 .portfolio-list__item:last-child .portfolio-list__item-link-container {
-    margin-bottom: 0;
-    padding-bottom: 100px;
+    margin: 0;
 }
 
 /*Contacts*/
