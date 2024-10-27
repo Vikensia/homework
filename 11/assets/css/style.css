@@ -92,7 +92,7 @@ header .container {
     background-image: url(../images/bg-picture.svg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: top 80px right;
 }
 
 .wrapper .container {
