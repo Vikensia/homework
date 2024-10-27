@@ -38,10 +38,6 @@ a:visited {
 
 /*Header*/
 
-header {
-    margin-bottom: 71px;
-}
-
 header .container {
     display: flex;
     padding: 13px 0;
@@ -68,6 +64,9 @@ header .container {
 }
 
 /*Main*/
+section.chapter-1 {
+    padding-top: 71px;
+}
 
 h2 {
     font-family: "Francois One", sans-serif;
