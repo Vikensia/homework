@@ -31,7 +31,6 @@ img {
     height: 100%;
     vertical-align: top;
     object-fit: cover;
-    border-radius: 20px;
 }
 
 .gallery {
@@ -48,16 +47,115 @@ img {
     grid-row: span 2;
 }
 
-/*
-.roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.roboto-medium {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+.btn {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .5;
+    cursor: pointer;
+    position: absolute;
+    top: -40px;
+    transition: all .5s ease;
+    z-index: 2;
 }
-    */
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn-like {
+    left: -40px;
+}
+
+.btn-download {
+    right: -40px;
+}
+
+.item:hover .btn {
+    top: 20px;
+}
+
+.item:hover .btn-like {
+    left: 20px;
+}
+
+.item:hover .btn-download {
+    right: 20px;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.25rem;
+    width: 100%;
+    z-index: 2;
+}
+
+.author {
+    color: #FFF;
+    font-weight: 500;
+}
+
+.date {
+    color: #E0E0E0;
+    font-weight: 400;
+}
+
+.item>img {
+    transition: all .2s ease;
+}
+
+.item:hover>img {
+    scale: 1.1;
+}
+
+.item::after,
+.item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    transition: all .5s ease;
+    z-index: 1;
+}
+
+
+
+.item::after {
+    height: 100%;
+    background-image: linear-gradient(to top, #241F24 0%, rgba(91, 91, 91, .45) 34%, rgba(187, 186, 192, .26) 63%);
+}
+
+.item::before {
+    height: 70px;
+    background-image: linear-gradient(to top, #241F24, transparent);
+    opacity: 0;
+}
+
+
+.item:hover::after {
+    opacity: 0;
+}
+
+.item:hover::before {
+    opacity: 1;
+}
