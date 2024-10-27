@@ -209,33 +209,33 @@ p {
 
 /*Contacts*/
 footer {
-    padding-top: 99px;
+    padding-top: 110px;
+    padding-bottom: 123px;
 }
 
 .footer-heading {
-    margin-bottom: 57px;
+    margin-bottom: 33px;
 }
 
 .footer-heading__title {
-    margin-bottom: 15px;
+    margin-bottom: 27px;
 }
 
 .btn {
     text-align: center;
     color: #FFF;
     font-weight: 700;
-    letter-spacing: 0.1125rem;
     background-color: #000;
     display: inline-block;
-    height: 44px;
+    height: 42px;
     line-height: 40px;
     border-radius: 22px;
-    padding: 0 16px;
-    font-family: "Open Sans", sans-serif;
+    padding: 0 26px;
+    font-family: "Gilroy", sans-serif;
     font-size: 1.125rem;
     cursor: pointer;
     border: 2px solid black;
-    margin-bottom: 28px;
+    margin-bottom: 86px;
 }
 
 .btn:hover {
@@ -245,18 +245,17 @@ footer {
 
 .contacts {
     margin-inline: auto;
-    width: 312px;
+    width: 344px;
     text-align: center;
 }
 
 .social-list {
-    height: 40px;
-    margin-bottom: 62px;
+    margin-bottom: 37px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .social-list__item {
-    display: inline;
-    margin-right: 44px;
     opacity: .7;
 }
 
@@ -269,10 +268,9 @@ footer {
 }
 
 .footer-message {
-    width: 200px;
+    width: 250px;
     margin-inline: auto;
     color: var(--sub-color);
     font-size: 0.875rem;
-    margin-bottom: 100px;
     text-align: center;
 }
