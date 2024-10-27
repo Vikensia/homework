@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #000;
+    font-family: "PT Sans", sans-serif;
+}
+
+p,
+ul {
+    font-size: 1.75rem;
+    line-height: 3rem;
+}
+
+header img {
+    display: block;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+}
+
+.section-container {
+    width: 785px;
+}
+
+ul {
+    list-style: none;
+}
+
+a,
+a:active {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-shadow:
+        0px 0 1px #000,
+        0 0px 1px #000;
+}
+
+/*Header*/
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+
+header .container {
+    display: flex;
+    padding: 13px 0;
+    align-items: center;
+}
+
+.page-lang img {
+    margin-right: 54px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+}
+
+.site-navigation {
+    margin-right: auto;
+}
+
+.site-navigation ul {
+    display: flex;
+    gap: 10px;
+    font-family: "Staatliches", sans-serif;
+    font-size: 1.375rem;
+    line-height: normal;
+    letter-spacing: 0.04125rem;
+}
+
+.current {
+    color: grey;
+}
+
+/*Wrapper*/
+.wrapper {
+    margin-top: 80px;
+    padding-top: 71px;
+    background-image: url(../images/bg-picture.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.wrapper .container {
+    display: grid;
+    grid-template-columns: 389px 1fr;
+    gap: 26px;
+}
+
+
+/*Aside*/
+.page-navigation-list {
+    position: sticky;
+    padding: 10px;
+    top: 150px;
+}
+
+.page-navigation-list li {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 71px;
+}
+
+/*Main*/
+section.chapter-1 {
+    padding-top: 29px;
+}
+
+.page-navigation-list li,
+h2 {
+    font-family: "Francois One", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 3rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    position: relative;
+    margin-right: 10px;
+}
+
+h2::before {
+    content: '';
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+    position: absolute;
+    top: -30px;
+}
+
+hgroup {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 38px;
+}
+
+hgroup p {
+    line-height: 0.7rem;
+    font-feature-settings: 'sups' on;
+    font-family: "Farro", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.075rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+
+.chapter-3 hgroup~p,
+.chapter-4 hgroup~p,
+.chapter-3 li {
+    margin-bottom: 40px;
+}
+
+.grey-bg {
+    background-color: #DADADA;
+}
+
+/*Second*/
+
+.second-container {
+    margin-top: 80px;
+    width: min(90%, 1200px);
+    margin-inline: auto;
+
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 3rem;
+    letter-spacing: 0.09rem;
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+
+h1::before {
+    content: '';
+    background-color: #000;
+    width: 100px;
+    height: 8px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.companies-list {
+    border-top: 1px solid #BFBFBF;
+    border-bottom: 1px solid #BFBFBF;
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    padding: 20px 15px;
+    gap: 30px;
+}
+
+.companies-list li {
+    height: 180px;
+}
+
+.flip-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 270px;
+    height: 180px;
+    perspective: 1000px;
+    border-radius: 8px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #E6E6E6;
+    border-radius: 8px;
+}
+
+.flip-card-back {
+    background-color: #E6E6E6;
+    color: white;
+    transform: rotateX(180deg);
+    border-radius: 8px;
+    filter: invert(1);
+}
