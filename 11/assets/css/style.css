@@ -45,6 +45,16 @@ a:hover {
         0 0px 1px #000;
 }
 
+aside {
+    position: relative;
+}
+
+.page-navigation {
+    position: sticky;
+    top: 80px;
+    left: 0;
+}
+
 /*Header*/
 
 header {
