@@ -1,6 +1,7 @@
 :root {
     --text-color: #16133D;
     --link-color: #007FFC;
+    --link-hover: #3DB370;
 }
 
 * {
@@ -120,8 +121,9 @@ footer .logo {
 }
 
 .socials-list li {
-    border-radius: 5px;
     background: #EFEEF3;
+    border-radius: 5px;
+    border: 1px solid transparent;
 }
 
 .socials-list li a {
@@ -135,4 +137,73 @@ footer .logo {
 .socials-list svg {
     width: 24px;
     height: 24px;
+}
+
+/*Hover*/
+.services-list li:hover {
+    border: 1px solid #52C29D;
+}
+
+.services-list li:hover a {
+    color: var(--link-hover);
+}
+
+.services-list li a:hover {
+    color: #50ff6d;
+}
+
+/*SVG*/
+svg,
+li,
+a {
+    transition: all .5s ease;
+}
+
+svg .color-1 {
+    fill: #D1E7FF;
+}
+
+svg .color-2 {
+    fill: #B9DCFF;
+}
+
+svg .color-3 {
+    fill: #E8F3FF;
+}
+
+svg .color-4 {
+    fill: white;
+}
+
+svg .color-5 {
+    fill: #007FFC;
+}
+
+.services-list li:hover svg .color-1 {
+    fill: #E1F4F5;
+}
+
+.services-list li:hover svg .color-2 {
+    fill: #CAEFF2;
+}
+
+.services-list li:hover svg .color-3 {
+    fill: #F4FEFF;
+}
+
+.services-list li:hover svg .color-4 {
+    fill: white;
+    /**/
+}
+
+.services-list li:hover svg .color-5 {
+    fill: #52C29D;
+}
+
+.socials-list li:hover {
+    border: 1px solid #52C29D;
+}
+
+.socials-list li a:hover svg {
+    fill: #52C29D;
 }
