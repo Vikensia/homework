@@ -1,5 +1,6 @@
 :root {
     --text-color: #16133D;
+    --link-color: #007FFC;
 }
 
 * {
@@ -17,10 +18,121 @@ body {
 }
 
 .container {
-    width: min(90% 1170px);
+    width: min(90%, 1170px);
     margin-inline: auto;
 }
 
 ul {
     list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+header {
+    border-bottom: 1px solid #EFEEF3;
+    margin-bottom: 97px;
+}
+
+header .container {
+    padding: 23.5px 0;
+}
+
+.site-title p {
+    color: #7690A8;
+    line-height: 1.3125rem;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3.25rem;
+    letter-spacing: 0.0125rem;
+    margin-bottom: 34px;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 96px;
+}
+
+.services-list li {
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #E5EAF4;
+}
+
+.services-list .icon {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid hsla(215, 82%, 46%, 0.1);
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.33rem;
+    letter-spacing: 0.0125rem;
+    margin-bottom: 15px;
+}
+
+.services-list p {
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.services-list a {
+    color: var(--link-color);
+    font-weight: 500;
+}
+
+footer {
+    background-color: #16133D;
+}
+
+footer .container {
+    padding: 40px 0;
+}
+
+footer .logo {
+    margin-bottom: 40px;
+}
+
+.socials-list {
+    display: flex;
+    gap: 10px;
+}
+
+.socials-list li {
+    border-radius: 5px;
+    background: #EFEEF3;
+}
+
+.socials-list li a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.socials-list svg {
+    width: 24px;
+    height: 24px;
 }
