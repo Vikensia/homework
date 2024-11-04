@@ -1,0 +1,138 @@
+/* roboto-300 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-v32-latin-300.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* bebas-neue-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/BebasNeue-Thin.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #9789F9;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+  letter-spacing: 0.04rem;
+}
+
+main {
+  padding: 120px 0;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*Price list*/
+.price-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.price-item {
+  width: calc(33.33% - 30px*2/3);
+  flex-grow: 1;
+  background-color: #F5F3F9;
+  box-shadow: 0px 0px 20px 0px #8677EF;
+  text-align: center;
+  padding-top: 40px;
+}
+.price-item.popular {
+  padding-top: 50px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 16px;
+  right: 30px;
+}
+
+.price {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 100;
+  line-height: 3.75rem;
+  /* 100% */
+  letter-spacing: 0.3rem;
+  margin-bottom: 24px;
+}
+.price sup {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  /* 100% */
+  position: relative;
+  top: -4px;
+}
+.price sub {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1rem;
+  /* 100% */
+  letter-spacing: 0.08rem;
+  position: relative;
+  top: -10px;
+}
+
+h2 {
+  font-family: "Bebas Neue";
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  margin-bottom: 30px;
+}
+
+.white-bg {
+  padding-top: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='370' height='390' viewBox='0 0 370 390' fill='none'%3E%3Cpath d='M0 65.2489C0 65.2489 168.458 -81.5611 370 65.2489V390H0V65.2489Z' fill='white'/%3E%3C/svg%3E");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  display: inline-block;
+}
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 60px;
+  background-color: #fff;
+}
+
+ul {
+  text-align: left;
+}
+ul li + li {
+  margin-top: 30px;
+}
