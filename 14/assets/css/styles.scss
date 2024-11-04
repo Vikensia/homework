@@ -1,0 +1,206 @@
+@import 'fonts';
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #666;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+
+    padding: 121px 0;
+}
+
+.container {
+    width: min(90%, 1070px);
+    margin-inline: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button, svg {
+    transition: all 0.3s ease;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    p {
+        color: #898F8F;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .header-divider {
+        align-self: center;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 50px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 24px;
+            width: 210px;
+            height: 1px;
+            background: #FC0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            right: 24px;
+            width: 210px;
+            height: 1px;
+            background: #FC0;
+        }
+    }
+}
+
+h1 {
+    color: #FC0;
+    font-size: 3.75rem;
+    font-weight: 900;
+    line-height: 4.125rem;
+    text-transform: uppercase;
+    margin-bottom: 37px;
+}
+
+main .container {
+    display: flex;
+    padding: 0 19px;
+}
+
+.photo-container {
+    position: relative;
+    margin-top: 64px;
+    img {
+        display: block;
+        width: 432px;
+        aspect-ratio: 1;
+        padding: 16px;
+        margin-right: 85px;
+    }
+    .photo-border {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+
+        &.top {
+            border-top: 1px solid #FC0;
+            top: 0;
+        }
+
+        &.bottom {
+            border-bottom: 1px solid #FC0;
+            bottom: 64px;
+        }
+
+        &.left {
+            border-left: 1px solid #FC0;
+            left: 0;
+        }
+
+        &.right {
+            border-right: 1px solid #FC0;
+            right: 85px;
+        }
+    }
+}
+
+.info {
+    align-self: flex-start;
+    padding-left: 85px;
+    padding-top: 73px;
+    padding-bottom: 64px;
+    border-left: 1px solid #FC0;
+    .profession {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        text-transform: capitalize;
+        margin-bottom: 37px;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 900;
+    text-transform: capitalize;
+    position: relative;
+    margin-bottom: 41px;
+    &::after {
+        content: '';
+        width: 100px;
+        height: 1px;
+        background: #FC0;
+        position: absolute;
+        bottom: -21px;
+        right: 164px;
+    }
+}
+
+.socials-list {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 46px;
+    li {
+        border-radius: 50%;
+        border: 1px solid #898F8F;
+        &:hover {
+            border-color: #FC0;
+        }
+        &:hover svg {
+            fill: #FC0;
+        }
+    }
+    a {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: #898F8F;
+    }
+}
+
+.divider {
+    margin: 15px auto;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(to right, #FC0 20%, transparent 20% 30%, #FC0 30% 70%, transparent 70% 80%, #FC0 80%);
+}
+
+.btn {
+    color: #666;
+    //text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid #FC0;
+    background-color: #fff;
+    margin-top: 5px;
+    &:hover {
+        border-color: #898F8F;
+        background-color: #FC0;
+    }
+}
