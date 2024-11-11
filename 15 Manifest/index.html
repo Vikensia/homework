@@ -9,7 +9,18 @@
 </head>
 
 <body>
-	<div class="page-shadow"></div>
+	<div class="page-shadow" onclick="document,body.classList.toggle('open-mobile-menu')"></div>
+	<div class="mobile-panel">
+		<nav class="mobile-menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Works</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</nav>
+	</div>
 
 	<div class="page-wrapper">
 		<header>
@@ -28,7 +39,7 @@
 				</nav>
 				<div class="button-block">
 					<button type="button" class="btn-search btn"></button>
-					<button type="button" class="hamburger btn"><span></span></button>
+					<button type="button" class="hamburger btn" onclick="document,body.classList.toggle('open-mobile-menu')"><span></span></button>
 				</div>
 			</div>
 		</header>
