@@ -370,7 +370,7 @@ h2 {
 }
 @media screen and (max-width: 768px) {
   .container {
-    width: 728px;
+    width: min(728px);
     margin-inline: auto;
   }
 
