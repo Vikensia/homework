@@ -174,6 +174,10 @@ a {
   text-decoration: none;
 }
 
+a:active, a:visited {
+  color: var(--black);
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -185,19 +189,15 @@ button {
   display: block;
 }
 
-section {
-  margin-bottom: 90px;
-}
-
 a span.arrow::after {
   display: inline-block;
   content: url("../images/arrow.svg");
-  padding-inline: 20px;
+  padding-left: 20px;
   position: relative;
   top: 2px;
   transition: all 0.5s ease;
 }
-a span.arrow:hover::after {
+a:hover span.arrow::after {
   transform: translate(8px, 0);
 }
 
@@ -209,6 +209,53 @@ a span.arrow:hover::after {
   border: none;
   background: transparent;
   position: relative;
+}
+
+/*Mobile menu*/
+.page-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+.mobile-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(-300px);
+  background: #fff;
+  width: 300px;
+  height: 100vh;
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.open-mobile-menu .page-shadow {
+  opacity: 1;
+  visibility: visible;
+}
+.open-mobile-menu .mobile-panel {
+  transform: translateX(0);
+}
+
+.mobile-menu ul {
+  border-top: 1px solid var(--gray);
+}
+.mobile-menu ul li {
+  border-bottom: 1px solid var(--gray);
+}
+.mobile-menu ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--gray);
+  width: 100%;
 }
 
 /*Header*/
@@ -276,9 +323,23 @@ header .btn-search {
 
 /*Hero section*/
 .hero-section {
-  background: url(../images/bg-image.jpg) center center/cover no-repeat;
-  height: calc(100vh - 100px);
+  background-image: url(../images/bg-image.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
   padding-top: 100px;
+  margin-bottom: 91px;
+}
+@media screen and (max-width: 992px) {
+  .hero-section {
+    background-image: url("../images/bg-image-tablet.jpg");
+  }
+}
+@media screen and (max-width: 460px) {
+  .hero-section {
+    background-image: url("../images/bg-image-phone.jpg");
+  }
 }
 
 h1 {
@@ -305,51 +366,61 @@ h2 {
   letter-spacing: 0.15rem;
 }
 
-.post {
+.blog {
+  margin-bottom: 91px;
+}
+.blog .post {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-.post.even {
+.blog .post.even {
   flex-direction: row-reverse;
 }
-
-.image-box, .post-content {
+.blog .image-box, .blog .post-content {
   width: 50%;
 }
-
-.theme, .post-date {
+.blog .theme, .blog .post-date {
   color: var(--gray);
   line-height: 166%;
   letter-spacing: 0.1rem;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
-
-.post-content h4 {
+.blog .post-content {
+  padding-right: 122px;
+}
+.blog .post-content h4 {
   color: var(--black);
   font-family: "Red Hat Display";
   font-size: 1.4375rem;
   font-weight: 500;
   line-height: 166%;
   letter-spacing: 0.14375rem;
-  margin-bottom: 15px;
-  width: 65%;
+  margin-bottom: 8px;
 }
-.post-content p {
-  width: 79%;
+.blog .post-content p {
   line-height: 166%;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
+}
+.blog .post-date {
+  margin-bottom: 47px;
 }
 
-.post-date {
-  margin-bottom: 50px;
+.even .post-content {
+  padding: 0;
+  padding-left: 122px;
 }
 
 /*Latest posts*/
+.latest-posts {
+  margin-bottom: 119px;
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  align-items: center;
+  margin-bottom: 43px;
 }
 .section-header h3 {
   color: var(--black);
@@ -365,50 +436,110 @@ h2 {
   letter-spacing: 0.1rem;
 }
 
-.page-shadow {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease;
+.posts-list {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
 }
-
-.mobile-panel {
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translateX(-300px);
-  background: #fff;
-  width: 300px;
-  height: 100vh;
-  z-index: 1000;
-  transition: all 0.5s ease;
+.posts-list .image-box {
+  margin-bottom: 20px;
 }
-
-.open-mobile-menu .page-shadow {
-  opacity: 1;
-  visibility: visible;
-}
-.open-mobile-menu .mobile-panel {
-  transform: translateX(0);
-}
-
-.mobile-menu ul {
-  border-top: 1px solid var(--gray);
-}
-.mobile-menu ul li {
-  border-bottom: 1px solid var(--gray);
-}
-.mobile-menu ul li a {
-  display: inline-block;
-  padding: 10px 20px;
+.posts-list .post-data {
   color: var(--gray);
-  width: 100%;
+  font-size: 0.75rem;
+  line-height: 166%;
+  letter-spacing: 0.075rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.posts-list h4 {
+  color: var(--black);
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 166%;
+  letter-spacing: 0.1375rem;
+  margin-bottom: 20px;
+}
+.posts-list p {
+  line-height: 166%;
+  letter-spacing: 0.05rem;
+}
+
+.latest-posts li {
+  width: 33.3333%;
+}
+
+.popular-posts {
+  margin-bottom: 90px;
+}
+.popular-posts .posts-list {
+  margin-bottom: 62px;
+}
+.popular-posts li {
+  width: 50%;
+}
+.popular-posts .section-header {
+  margin-bottom: 46px;
+}
+.popular-posts h4 {
+  letter-spacing: 0.15rem;
+  font-size: 1.5rem;
+}
+.popular-posts .post-data {
+  margin-bottom: 21px;
+}
+
+.load-btn {
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 166%;
+  letter-spacing: 0.1125rem;
+  background-color: #565656;
+  padding: 8px 40px;
+  margin-inline: auto;
+  border: 1px transparent;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+.load-btn:hover {
+  background: var(--hover);
+}
+
+/*Vacancy*/
+.vacancy {
+  margin-bottom: 90px;
+}
+.vacancy h3 {
+  display: none;
+}
+.vacancy .vacancy-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 230px;
+}
+.vacancy ul {
+  color: var(--black);
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.4375rem;
+  line-height: 166%;
+  letter-spacing: 0.14375rem;
+  width: 50%;
+}
+.vacancy .text-block {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  letter-spacing: 0.0625rem;
+  width: 50%;
+}
+.vacancy p + p {
+  margin-top: 30px;
+}
+.vacancy a span.arrow::after {
+  padding: 0;
 }
 
 /*media*/
