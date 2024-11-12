@@ -1,4 +1,5 @@
 @import 'fonts';
+@import 'hamburgers';
 
 
 :root {
@@ -70,28 +71,28 @@ a span.arrow {
 	border: none;
 	background: transparent;
 	position: relative;
-	&::before, &::after {
-		content: '';
-	}
-	span, &::before, &::after {
-		position: absolute;
-		left: 2px;
-		width: 30px;
-		height: 3px;
-		background-color: #000;
-	}
-	span {
-		top: 10px;
-	}
-	&::before {
-		top: -2px;
-	}
-	&::after {
-		top: 22px;
-	}
+	// &::before, &::after {
+	// 	content: '';
+	// }
+	// span, &::before, &::after {
+	// 	position: absolute;
+	// 	left: 2px;
+	// 	width: 30px;
+	// 	height: 3px;
+	// 	background-color: #000;
+	// }
+	// span {
+	// 	top: 10px;
+	// }
+	// &::before {
+	// 	top: -2px;
+	// }
+	// &::after {
+	// 	top: 22px;
+	// }
  }
 
-/*Header*/
+ /*Header*/
 header {
 	padding: 37px 0;
 	background-color: #fff;
@@ -103,9 +104,13 @@ header {
 	.logo {
 		margin-right: auto;
 	}
+	.btn-block {
+		display: flex;
+		align-items: center;
+	}
 	.btn {
 		width: 26px;
-		aspect-ratio: 1;
+		height: 26px;
 		background-color: transparent;
 		border: none;
 		transition: all .2s ease;
@@ -327,16 +332,12 @@ h2 {
 .main-menu ul {
 	gap: 15px;
 	}
-
-header .btn-search {
-	margin-left: 15px;
-	}
 }
 
 @media screen and (max-width: 768px) {
 	.container {
-	width: min(728px);
-	margin-inline: auto;
+	width: calc(100% - 40px);
+	margin-inline: 20px;
 	}
 
 	header {
@@ -344,10 +345,11 @@ header .btn-search {
 		.main-menu {
 		display: none;
 		}
-
+		
 		.btn {
 		display: inline-block;
 		width: 32px;
+		height: 32px;
 		}
 	}
 	.hero-section {

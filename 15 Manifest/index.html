@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div class="page-shadow" onclick="document,body.classList.toggle('open-mobile-menu')"></div>
+	<div class="page-shadow" onclick="toggleMenu()"></div>
 	<div class="mobile-panel">
 		<nav class="mobile-menu">
 			<ul>
@@ -37,10 +37,13 @@
 						<li><a href="#">Contacts</a></li>
 					</ul>
 				</nav>
-				<div class="button-block">
-					<button type="button" class="btn-search btn"></button>
-					<button type="button" class="hamburger btn" onclick="document,body.classList.toggle('open-mobile-menu')"><span></span></button>
-				</div>
+				<button type="button" class="btn-search btn"></button>
+				<!-- <button type="button" class="hamburger btn" onclick="document,body.classList.toggle('open-mobile-menu')"><span></span></button> -->
+				<button class="hamburger hamburger--squeeze btn" type="button" onclick="toggleMenu()">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
 			</div>
 		</header>
 		<main>
@@ -165,6 +168,12 @@
 			<p>© Copyright Manifest Theme. Allrights reserved</p>
 		</footer>
 	</div>
+	<script>
+		function toggleMenu() {
+			document.querySelector(".hamburger").classList.toggle('is-active')
+			document.body.classList.toggle('open-mobile-menu');
+		}
+	</script>
 </body>
 
 </html>
