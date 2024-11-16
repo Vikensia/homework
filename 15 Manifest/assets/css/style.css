@@ -148,6 +148,8 @@
   --black: #000;
   --hover: #2dd1ad;
   --gray: #7B7B7B;
+  --active: #4decaa;
+  --visited: #1e806a;
 }
 
 *, *::before, *::after {
@@ -171,11 +173,14 @@ ul {
 }
 
 a {
+  color: var(--black);
   text-decoration: none;
 }
-
-a:active, a:visited {
-  color: var(--black);
+a:active {
+  color: var(--active);
+}
+a:visited {
+  color: var(--visited);
 }
 
 img {
@@ -386,8 +391,11 @@ h2 {
   letter-spacing: 0.1rem;
   margin-bottom: 32px;
 }
-.blog .post-content {
+.blog .odd .post-content {
   padding-right: 122px;
+}
+.blog .even .post-content {
+  padding-left: 122px;
 }
 .blog .post-content h4 {
   color: var(--black);
@@ -406,14 +414,12 @@ h2 {
   margin-bottom: 47px;
 }
 
-.even .post-content {
-  padding: 0;
-  padding-left: 122px;
-}
-
 /*Latest posts*/
 .latest-posts {
   margin-bottom: 119px;
+}
+.latest-posts li {
+  width: 33.3333%;
 }
 
 .section-header {
@@ -465,10 +471,6 @@ h2 {
 .posts-list p {
   line-height: 166%;
   letter-spacing: 0.05rem;
-}
-
-.latest-posts li {
-  width: 33.3333%;
 }
 
 .popular-posts {
@@ -535,6 +537,9 @@ h2 {
   letter-spacing: 0.0625rem;
   width: 50%;
 }
+.vacancy a:hover {
+  color: var(--hover);
+}
 .vacancy p + p {
   margin-top: 30px;
 }
@@ -542,8 +547,75 @@ h2 {
   padding: 0;
 }
 
+/*Footer*/
+footer {
+  background-color: #F4F4F4;
+}
+footer .container {
+  padding: 70px 0 30px;
+}
+footer h2 {
+  color: var(--black);
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 26px;
+}
+footer h2 + div {
+  margin-bottom: 14px;
+}
+footer a {
+  line-height: 166%;
+  letter-spacing: 0.1rem;
+}
+footer a:hover {
+  color: var(--hover);
+}
+
+.socials-list {
+  display: flex;
+  gap: 23px;
+  justify-content: flex-end;
+}
+.socials-list li a {
+  border: 1px solid var(--gray);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+.socials-list li a svg {
+  fill: var(--gray);
+}
+.socials-list li a:hover, .socials-list li a:active {
+  background: #565656;
+}
+.socials-list li a:hover svg, .socials-list li a:active svg {
+  fill: #fff;
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.copyright {
+  color: var(--black);
+  font-size: 0.75rem;
+  line-height: 166%;
+  letter-spacing: 0.075rem;
+  text-align: center;
+}
+
 /*media*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .main-menu ul {
     gap: 20px;
   }
@@ -557,17 +629,27 @@ h2 {
     width: 100%;
   }
 
-  .post-content .theme {
+  .blog .post-content .theme {
     margin-bottom: 15px;
   }
-  .post-content p, .post-content h4 {
+  .blog .post-content p, .blog .post-content h4 {
     width: 100%;
   }
-  .post-content h4 {
+  .blog .post-content h4 {
     margin-bottom: 10px;
   }
-  .post-content .post-date {
+  .blog .post-content .post-date {
     margin-bottom: 30px;
+  }
+  .blog .odd .post-content {
+    padding-right: 5%;
+  }
+  .blog .even .post-content {
+    padding-left: 5%;
+  }
+
+  .vacancy .vacancy-container {
+    gap: 10%;
   }
 }
 @media screen and (max-width: 800px) {
@@ -582,7 +664,7 @@ h2 {
   }
 
   header {
-    padding: 33px 0;
+    padding: 34px 0;
   }
   header .main-menu {
     display: none;
@@ -592,19 +674,219 @@ h2 {
     width: 32px;
     height: 32px;
   }
+  header .hamburger {
+    margin-left: 44px;
+  }
 
   .hero-section {
+    margin-bottom: 70px;
     padding-top: 80px;
   }
-}
-@media screen and (max-width: 375px) {
-  .hero-section {
-    padding-top: 40px;
+
+  .blog {
+    margin-bottom: 67px;
+  }
+  .blog .container > :not(:last-child) {
+    margin-bottom: 43px;
+  }
+  .blog .image-box {
+    width: min(90%, 345px);
+  }
+  .blog .post-content {
+    padding: 0;
+    padding-top: 5px;
+  }
+  .blog .post-content h4 {
+    margin-bottom: 6px;
   }
 
-  h1 {
+  .latest-posts {
+    margin-bottom: 66px;
+  }
+  .latest-posts .posts-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .latest-posts .posts-list li {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+  }
+  .latest-posts .posts-list li .image-box {
+    width: min(370px, 60%);
+    margin-bottom: 0;
+  }
+  .latest-posts .posts-list li .post-content {
+    padding: 0;
+    width: max(338px, 40%);
+  }
+  .latest-posts .posts-list li.even {
+    flex-direction: row-reverse;
+  }
+
+  .popular-posts {
+    margin-bottom: 70px;
+  }
+  .popular-posts .posts-list {
+    gap: 48px;
+  }
+  .popular-posts .post-data {
+    margin-bottom: 21px;
+  }
+  .popular-posts h4 {
+    font-size: 1.375rem;
+    letter-spacing: 0.1375rem;
+  }
+
+  .vacancy {
+    margin-bottom: 71px;
+  }
+  .vacancy .vacancy-container {
+    display: block;
+  }
+  .vacancy .vacancy-container .vacancy-list, .vacancy .vacancy-container .text-block {
+    width: 100%;
+  }
+  .vacancy .vacancy-container .vacancy-list {
+    margin-bottom: 31px;
+  }
+  .vacancy .vacancy-container .text-block {
+    text-align: end;
+  }
+
+  footer .container {
+    padding: 50px 20px;
+  }
+  footer .contacts-container {
+    display: block;
+    margin-bottom: 41px;
+  }
+  footer h2 {
+    margin-bottom: 16px;
+  }
+  footer .box {
+    text-align: center;
+    margin-bottom: 53px;
+  }
+  footer .socials-list {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 674px) {
+  .blog {
+    margin-bottom: 70px;
+  }
+  .blog .container .post {
+    flex-direction: column-reverse;
+    gap: 24px;
+    margin-bottom: 49px;
+  }
+  .blog .container .post .image-box, .blog .container .post .post-content {
+    width: 100%;
+    padding: 0;
+  }
+  .blog .container .post.even {
+    flex-direction: column-reverse;
+    gap: 36px;
+  }
+  .blog .container .post img {
+    height: max(280px, 100%);
+  }
+  .blog .container .post .post-content .theme {
+    margin-bottom: 2px;
+  }
+  .blog .container .post .post-content h4 {
+    margin-bottom: 10px;
+  }
+  .blog .container .post .post-content .post-date {
+    margin-bottom: 28px;
+  }
+
+  .latest-posts .section-header, .popular-posts .section-header {
+    display: block;
+    margin-bottom: 55px;
+  }
+  .latest-posts .section-header h3, .popular-posts .section-header h3 {
+    margin-bottom: 8px;
+  }
+  .latest-posts .posts-list, .popular-posts .posts-list {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+  .latest-posts .posts-list li, .latest-posts .posts-list li.even, .popular-posts .posts-list li, .popular-posts .posts-list li.even {
+    flex-direction: column;
+    gap: 21px;
+  }
+  .latest-posts .posts-list li .image-box, .latest-posts .posts-list li .post-content, .latest-posts .posts-list li.even .image-box, .latest-posts .posts-list li.even .post-content, .popular-posts .posts-list li .image-box, .popular-posts .posts-list li .post-content, .popular-posts .posts-list li.even .image-box, .popular-posts .posts-list li.even .post-content {
+    width: 100%;
+  }
+
+  .popular-posts .section-header h3 {
+    margin-bottom: 16px;
+  }
+  .popular-posts .posts-list {
+    gap: 63px;
+  }
+  .popular-posts .posts-list li {
+    width: 100%;
+  }
+  .popular-posts .posts-list li .image-box {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .hamburger {
+    margin-left: 24px;
+  }
+
+  .hero-section {
+    height: 567px;
+    margin-bottom: 70px;
+    padding-top: 40px;
+  }
+  .hero-section h1 {
     font-size: 2.4375rem;
-    font-weight: 600;
     letter-spacing: 0;
+    text-align: start;
+  }
+
+  .blog .container .section-header {
+    margin-bottom: 51px;
+  }
+
+  .latest-posts {
+    margin-bottom: 82px;
+  }
+
+  .popular-posts .posts-list {
+    margin-bottom: 61px;
+  }
+
+  .vacancy .vacancy-container .vacancy-list {
+    margin-bottom: 11px;
+  }
+  .vacancy .vacancy-container .text-block {
+    text-align: start;
+  }
+
+  footer .container {
+    padding: 50px 0;
+  }
+  footer .box {
+    margin-bottom: 52px;
+  }
+  footer h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.125rem;
+  }
+  footer .socials-list {
+    gap: 30px;
+  }
+  footer .copyright {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding-inline: 20px;
   }
 }
