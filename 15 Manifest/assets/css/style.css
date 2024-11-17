@@ -91,7 +91,6 @@
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: 4px, -2;
 }
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 30px;
