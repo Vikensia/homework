@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Manifest</title>
+	<link rel="stylesheet" href="assets/css/animate.min.css">
 	<link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 
@@ -49,14 +50,14 @@
 		<main>
 			<section class="hero-section">
 				<div class="container">
-					<h1>Manifest is a newborn theme.
+					<h1 class="animate__animated animate__fadeInLeft">Manifest is a newborn theme.
 						Clean, simple and fast.</h1>
 				</div>
 			</section>
 			<section class="blog">
 				<div class="container">
 					<h2 class="section-header">Blog</h2>
-					<div class="post odd">
+					<div class="post odd wow animate__slideInLeft">
 						<div class="image-box">
 							<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/blog-first.jpg" alt="">
 						</div>
@@ -67,7 +68,7 @@
 							<p>Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility to use our influence to drive this.<a href="#"><span class="arrow"></span></a></p>
 						</div>
 					</div>
-					<div class="post even">
+					<div class="post even wow animate__slideInRight">
 						<div class="image-box">
 							<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/blog-second.jpg" alt="">
 						</div>
@@ -87,7 +88,7 @@
 						<div><a href="#" class="view-all-link">View All<span class="arrow"></span></a></div>
 					</div>
 					<ul class="posts-list">
-						<li class="odd">
+						<li class="odd wow animate__slideInUp">
 							<div class="image-box">
 								<picture>
 									<source data-srcset="assets/images/post-first-mobile.jpg" media="(max-width: 420px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -103,7 +104,7 @@
 								<p>UI has to make a huge visual difference between warning, an alert and a success.</p>
 							</div>
 						</li>
-						<li class="even">
+						<li class="even wow animate__slideInUp">
 							<div class="image-box">
 								<picture>
 									<source data-srcset="assets/images/post-second-mobile.jpg" media="(max-width: 420px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -119,7 +120,7 @@
 								<p>UI has to make a huge visual difference between warning, an alert and a success.</p>
 							</div>
 						</li>
-						<li class="odd">
+						<li class="odd wow animate__slideInUp">
 							<div class="image-box">
 								<picture>
 									<source data-srcset="assets/images/post-last-mobile.jpg" media="(max-width: 420px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -145,7 +146,7 @@
 						<div><a href="#" class="view-all-link">View All<span class="arrow"></span></a></div>
 					</div>
 					<ul class="posts-list">
-						<li>
+						<li class="wow animate__backInLeft">
 							<div class="image-box">
 								<picture>
 									<source data-srcset="assets/images/popular-first-tablet.jpg" media="(max-width: 768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -161,7 +162,7 @@
 								<p>LinkedIn is on a clear mission to make professionals more successful by connecting the global workforce and as we learned — diversity and success go hand in hand</p>
 							</div>
 						</li>
-						<li>
+						<li class="wow animate__backInRight">
 							<div class="image-box">
 								<picture>
 									<source data-srcset="assets/images/popular-last-tablet.jpg" media="(max-width: 768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
@@ -242,12 +243,17 @@
 		</footer>
 	</div>
 	<script src="assets/js/lazyload.min.js"></script>
+	<script src="assets/js/wow.min.js"></script>
 	<script>
 		function toggleMenu() {
 			document.querySelector(".hamburger").classList.toggle('is-active')
 			document.body.classList.toggle('open-mobile-menu');
 		}
 		var lazyLoadInstance = new LazyLoad({});
+		const wow = new WOW({
+			animateClass: 'animate__animated'
+		});
+		wow.init();
 	</script>
 </body>
 
