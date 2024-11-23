@@ -10,40 +10,30 @@ let !name
 let nameofourpreciouscustomer*/
 //let имя
 
-/*
 firstName = prompt("Enter your name");
-alert(`Hello, ${firstName}!`);
-
-const CURRENT_YEAR = 2024;
-let userYearOfBirth;
-let userAge;
+alert("Hello, ".concat(firstName, "!"));
+var CURRENT_YEAR = 2024;
+var userYearOfBirth;
+var userAge;
 userYearOfBirth = prompt("Enter your year of birth");
 userAge = CURRENT_YEAR - userYearOfBirth;
-alert(`Your age is ${userAge}!`);
-
-
-let squareLength;
-let perim;
+alert("Your age is ".concat(userAge, "!"));
+var squareLength;
+var perim;
 squareLength = prompt("Enter square length");
 perim = 4 * squareLength;
-alert(`Perimeter is ${perim} sm`);
-
-
-let circleRadius;
-let circleArea;
+alert("Perimeter is ".concat(perim, " sm"));
+var circleRadius;
+var circleArea;
 circleRadius = prompt("Enter circle Radius");
 circleArea = Math.PI * (circleRadius * circleRadius);
-alert(`Circle area is ${circleArea} sm2`);
-
-
-let distance;
-let travelTime;
+alert("Circle area is ".concat(circleArea, " sm2"));
+var distance;
+var travelTime;
 distance = prompt("Enter distance");
 travelTime = prompt("Enter time of travel");
-let speed = distance / travelTime;
-alert(`Your speed is ${speed} km/h`);
-*/
-
+var speed = distance / travelTime;
+alert("Your speed is ".concat(speed, " km/h"));
 var CONVERT_COURSE = 0.96;
 var dollars = prompt("Enter dollars");
 var euros = dollars * CONVERT_COURSE;

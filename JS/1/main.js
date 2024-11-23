@@ -9,7 +9,7 @@ let !name
 let nameofourpreciouscustomer*/
 //let имя
 
-/*
+
 firstName = prompt("Enter your name");
 alert(`Hello, ${firstName}!`);
 
@@ -41,7 +41,7 @@ distance = prompt("Enter distance");
 travelTime = prompt("Enter time of travel");
 let speed = distance / travelTime;
 alert(`Your speed is ${speed} km/h`);
-*/
+
 
 const CONVERT_COURSE = 0.96;
 let dollars = prompt("Enter dollars");
