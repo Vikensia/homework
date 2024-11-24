@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Task1 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 1
+        </div>
+        <div class="card-body">
+            <p class="card-text">Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.</p>
+            <button type="button" class="btn btn-primary" onclick="startRound()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="task1"></span>
+        </div>
+    </div>
+    <!-- Task2 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 2
+        </div>
+        <div class="card-body">
+            <p class="card-text">Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в змінних), добийся математично правильної відповіді.</p>
+            <button type="button" class="btn btn-primary" onclick="startSum()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="z"></span>
+        </div>
+    </div>
+    <!-- Task3 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 3
+        </div>
+        <div class="card-body">
+            <p class="card-text">Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки файлів розміром в 820 Мб поміщається на флешку.</p>
+            <div class="mb-3">
+                <label for="userStorageGb" class="form-label">Your storage, GB</label>
+                <input type="number" class="form-control" id="userStorageGb">
+                <div class="form-text">Enter data</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="caclFiles()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="filesNumber"></span>
+        </div>
+    </div>
+    <!-- Task4 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 4
+        </div>
+        <div class="card-body">
+            <p class="card-text">Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.</p>
+            <div class="mb-3">
+                <label for="userMoney" class="form-label">Your money</label>
+                <input type="number" class="form-control" id="userMoney">
+                <div class="form-text">Enter money amount</div>
+                <label for="chocolatePrice" class="form-label mt-2">Chocolate's price</label>
+                <input type="number" class="form-control" id="chocolatePrice">
+                <div class="form-text">Enter price of one chocolate</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="caclChocolates()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="chocolatesNumber"></span>
+        </div>
+    </div>
+    <!-- Task5 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 5
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання тобі знадобиться оператор % (залишок від ділення).</p>
+            <div class="mb-3">
+                <label for="userNumber" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userNumber" min="100" max="999">
+                <div class="form-text">Enter number from 100 to 999</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="startReverse()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="userNumberReversed"></span>
+        </div>
+    </div>
+    <!-- Task6 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 6
+        </div>
+        <div class="card-body">
+            <p class="card-text">Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою депозиту 5% річних. Вивести суму нарахованих відсотків.
+            </p>
+            <div class="mb-3">
+                <label for="userDeposit" class="form-label">Your deposit</label>
+                <input type="number" class="form-control" id="userDeposit">
+                <div class="form-text">Enter deposit sum</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcProfit()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="userProfit"></span>
+        </div>
+    </div>
+    <script src="lesson2.js"></script>
+</body>
+
+</html>
