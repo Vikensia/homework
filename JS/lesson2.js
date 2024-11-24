@@ -26,7 +26,7 @@ function startSum() {
 const FILE_SIZE = 820;
 function caclFiles() {
     let userStorageGb = byId('userStorageGb').valueAsNumber;
-    if (isNaN(userStorageGb)) {
+    if (isNaN(userStorageGb) || userStorageGb < 0) {
         byId('filesNumber').innerHTML = `<span style="color: red">Invalid number</span>`;
     } else {
         let userStorageMb = userStorageGb * 1024;
@@ -41,7 +41,7 @@ function caclFiles() {
 function caclChocolates() {
     let userMoney = byId('userMoney').valueAsNumber;
     let chocolatePrice = byId('chocolatePrice').valueAsNumber;
-    if (isNaN(userMoney) || isNaN(chocolatePrice)) {
+    if (isNaN(userMoney) || isNaN(chocolatePrice) || userMoney < 0 || chocolatePrice < 0) {
         byId('chocolatesNumber').innerHTML = `<span style="color: red">Invalid number</span>`;
     } else if (chocolatePrice === 0) {
         byId('chocolatesNumber').innerHTML = `<span style="color: blue">Free chocolates for everyone!</span>`;
@@ -72,7 +72,7 @@ function startReverse() {
 const PROFIT_PERCENT_YEAR = 5;
 function calcProfit() {
     let userDeposit = byId('userDeposit').valueAsNumber;
-    if (isNaN(userDeposit)) {
+    if (isNaN(userDeposit) || userDeposit < 0) {
         byId('userProfit').innerHTML = `<span style="color: red">Invalid number</span>`;
     } else {
         let userProfit = userDeposit * PROFIT_PERCENT_YEAR / 100 / 12 * 2;
