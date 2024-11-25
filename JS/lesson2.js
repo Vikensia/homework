@@ -42,14 +42,20 @@ function caclChocolates() {
     let userMoney = byId('userMoney').valueAsNumber;
     let chocolatePrice = byId('chocolatePrice').valueAsNumber;
     if (isNaN(userMoney) || isNaN(chocolatePrice) || userMoney < 0 || chocolatePrice < 0) {
-        byId('chocolatesNumber').innerHTML = `<span style="color: red">Invalid number</span>`;
+        byId('chocolatesNumber').innerHTML = `<span style="color: red">Invalid number</span>`
+        byId('moneyLeft').innerHTML = `<span></span>`
+        return;
     } else if (chocolatePrice === 0) {
         byId('chocolatesNumber').innerHTML = `<span style="color: blue">Free chocolates for everyone!</span>`;
+        byId('moneyLeft').innerHTML = `<span style="color: blue">${userMoney} money left.</span>`
     }
     else {
-        let chocolatesNumber =  Math.floor(userMoney / chocolatePrice);
-        byId('chocolatesNumber').innerHTML = `<span style="color: blue">${chocolatesNumber}</span>`
-        return chocolatesNumber;
+        let chocolatesNumber = Math.floor(userMoney / chocolatePrice);
+        let moneyLeft = userMoney - chocolatesNumber * chocolatePrice;
+        moneyLeft = Math.round(moneyLeft * 100) / 100;
+        byId('chocolatesNumber').innerHTML = `<span style="color: blue">You can buy ${chocolatesNumber} chocolates.</span>`
+        byId('moneyLeft').innerHTML = `<span style="color: blue">${moneyLeft} money left.</span>`
+        return;
     }
 }
 

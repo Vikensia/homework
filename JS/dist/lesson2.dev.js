@@ -49,12 +49,18 @@ function caclChocolates() {
 
   if (isNaN(userMoney) || isNaN(chocolatePrice) || userMoney < 0 || chocolatePrice < 0) {
     byId('chocolatesNumber').innerHTML = "<span style=\"color: red\">Invalid number</span>";
+    byId('moneyLeft').innerHTML = "<span></span>";
+    return;
   } else if (chocolatePrice === 0) {
     byId('chocolatesNumber').innerHTML = "<span style=\"color: blue\">Free chocolates for everyone!</span>";
+    byId('moneyLeft').innerHTML = "<span style=\"color: blue\">".concat(userMoney, " money left.</span>");
   } else {
     var chocolatesNumber = Math.floor(userMoney / chocolatePrice);
-    byId('chocolatesNumber').innerHTML = "<span style=\"color: blue\">".concat(chocolatesNumber, "</span>");
-    return chocolatesNumber;
+    var moneyLeft = userMoney - chocolatesNumber * chocolatePrice;
+    moneyLeft = Math.round(moneyLeft * 100) / 100;
+    byId('chocolatesNumber').innerHTML = "<span style=\"color: blue\">You can buy ".concat(chocolatesNumber, " chocolates.</span>");
+    byId('moneyLeft').innerHTML = "<span style=\"color: blue\">".concat(moneyLeft, " money left.</span>");
+    return;
   }
 } //task5
 
