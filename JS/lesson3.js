@@ -262,13 +262,11 @@ function guessNumber() {
     let result;
     userNumber = userNumber / 2;
 
-    
     function answerMore() {
         result = window.confirm(`Ваше число більше ${userNumber}?`)
         if (result) {
             delta = Math.ceil(delta / 2);
             userNumber += delta;
-            return userNumber
         } else {
             result = window.confirm(`Ваше число менше ${userNumber}?`)
             if (result) {
@@ -277,10 +275,8 @@ function guessNumber() {
                 if (userNumber <= 3) {
                     userNumber -= 1;
                 }
-                return userNumber
             }
         }
-        return userNumber
     }
 
     do {
@@ -288,16 +284,15 @@ function guessNumber() {
     }
     while (result && userNumber < 100 && userNumber > 0)
     
+    alert(`Ваше число ${userNumber}`)
+    
     if (userNumber > 99) {
         alert(`Ваше число ${userMax}`)
-        return userMax
     }
 
     if (userNumber < 1) {
         alert(`Ваше число ${userMin}`)
-        return userMin
     }
-
 }
 
 //task11
@@ -307,18 +302,15 @@ function calcTable() {
     let tableCol = '';
     let tableCell = '';
     for (let i = 1; i < 12; i++) {
-   //       debugger
             tableCol += '<tr>'
             tableCol += tableCell
             tableCol += '</tr>'
-
             tableCell = '';
 
         for (let j = 2; j < 10; j++) {
             tableCell += '<td style="border: 1px solid black; padding: 5px;">'
             tableCell = tableCell + j + '*' + i + '=' + i * j;
             tableCell += '</td>'
-        //    tableRow += tableCell
         }
     }
     byId('numTable').innerHTML = `${tableCol}`
@@ -369,7 +361,6 @@ function nextDay() {
         } else {
             newDate = userDate + 1;
         }
-        return newDate
     }
 
     function nextMonth() {
@@ -383,10 +374,9 @@ function nextDay() {
         } else {
             newMonth = userMonth;
         }
-        return newMonth
     }
 
-    if (isNaN(userDate) || isNaN(userMonth) || isNaN(userYear) || userDate <= 0 || userMonth <= 0) {
+    if (isNaN(userDate) || isNaN(userMonth) || isNaN(userYear) || userDate <= 0 || userMonth <= 0 || userDate > maxDays || userMonth > 12 ) {
         byId('dayResult').innerHTML = `<span style="color: red">INVALID DATA</span>`
     } else {
         nextDay();

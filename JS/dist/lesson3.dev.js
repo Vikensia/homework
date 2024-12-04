@@ -299,7 +299,6 @@ function guessNumber() {
     if (result) {
       delta = Math.ceil(delta / 2);
       userNumber += delta;
-      return userNumber;
     } else {
       result = window.confirm("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E \u043C\u0435\u043D\u0448\u0435 ".concat(userNumber, "?"));
 
@@ -310,26 +309,22 @@ function guessNumber() {
         if (userNumber <= 3) {
           userNumber -= 1;
         }
-
-        return userNumber;
       }
     }
-
-    return userNumber;
   }
 
   do {
     answerMore(userNumber);
   } while (result && userNumber < 100 && userNumber > 0);
 
+  alert("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(userNumber));
+
   if (userNumber > 99) {
     alert("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(userMax));
-    return userMax;
   }
 
   if (userNumber < 1) {
     alert("\u0412\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(userMin));
-    return userMin;
   }
 } //task11
 //Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.
@@ -341,7 +336,6 @@ function calcTable() {
   var tableCell = '';
 
   for (var _i = 1; _i < 12; _i++) {
-    //       debugger
     tableCol += '<tr>';
     tableCol += tableCell;
     tableCol += '</tr>';
@@ -350,7 +344,7 @@ function calcTable() {
     for (var j = 2; j < 10; j++) {
       tableCell += '<td style="border: 1px solid black; padding: 5px;">';
       tableCell = tableCell + j + '*' + _i + '=' + _i * j;
-      tableCell += '</td>'; //    tableRow += tableCell
+      tableCell += '</td>';
     }
   }
 
@@ -404,8 +398,6 @@ function nextDay() {
     } else {
       newDate = userDate + 1;
     }
-
-    return newDate;
   }
 
   function nextMonth() {
@@ -419,11 +411,9 @@ function nextDay() {
     } else {
       newMonth = userMonth;
     }
-
-    return newMonth;
   }
 
-  if (isNaN(userDate) || isNaN(userMonth) || isNaN(userYear) || userDate <= 0 || userMonth <= 0) {
+  if (isNaN(userDate) || isNaN(userMonth) || isNaN(userYear) || userDate <= 0 || userMonth <= 0 || userDate > maxDays || userMonth > 12) {
     byId('dayResult').innerHTML = "<span style=\"color: red\">INVALID DATA</span>";
   } else {
     nextDay();
