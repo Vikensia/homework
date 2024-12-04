@@ -13,9 +13,9 @@ function startRound() {
 }
 
 //task 2
-let x = "1";
-let y = 2;
 function startSum() {
+    let x = "1";
+    let y = 2;
     x = Number(x);
     let z = x + y;
     byId('z').innerHTML = `<span style="color: blue">${z}</span>`
@@ -23,8 +23,8 @@ function startSum() {
 }
 
 //task3
-const FILE_SIZE = 820;
 function caclFiles() {
+const FILE_SIZE = 820;
     let userStorageGb = byId('userStorageGb').valueAsNumber;
     if (isNaN(userStorageGb) || userStorageGb < 0) {
         byId('filesNumber').innerHTML = `<span style="color: red">Invalid number</span>`;
@@ -75,8 +75,8 @@ function startReverse() {
 }
 
 //task6
-const PROFIT_PERCENT_YEAR = 5;
 function calcProfit() {
+    const PROFIT_PERCENT_YEAR = 5;
     let userDeposit = byId('userDeposit').valueAsNumber;
     if (isNaN(userDeposit) || userDeposit < 0) {
         byId('userProfit').innerHTML = `<span style="color: red">Invalid number</span>`;

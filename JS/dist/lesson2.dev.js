@@ -15,10 +15,9 @@ function startRound() {
 } //task 2
 
 
-var x = "1";
-var y = 2;
-
 function startSum() {
+  var x = "1";
+  var y = 2;
   x = Number(x);
   var z = x + y;
   byId('z').innerHTML = "<span style=\"color: blue\">".concat(z, "</span>");
@@ -26,9 +25,8 @@ function startSum() {
 } //task3
 
 
-var FILE_SIZE = 820;
-
 function caclFiles() {
+  var FILE_SIZE = 820;
   var userStorageGb = byId('userStorageGb').valueAsNumber;
 
   if (isNaN(userStorageGb) || userStorageGb < 0) {
@@ -81,9 +79,8 @@ function startReverse() {
 } //task6
 
 
-var PROFIT_PERCENT_YEAR = 5;
-
 function calcProfit() {
+  var PROFIT_PERCENT_YEAR = 5;
   var userDeposit = byId('userDeposit').valueAsNumber;
 
   if (isNaN(userDeposit) || userDeposit < 0) {

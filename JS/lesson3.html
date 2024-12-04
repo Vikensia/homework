@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Task1 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 1
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача його вік і визначи, ким він є: дитиною (0-11), підлітком (12-17), дорослим (18_59) або пенсіонером (60 ...), передбач можливість введення невірних даних.</p>
+            <div class="mb-3">
+                <label for="userAge" class="form-label">Your age</label>
+                <input type="number" class="form-control" id="userAge">
+                <div class="form-text">Enter age</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="caclAge()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="ageResult"></span>
+        </div>
+    </div>
+    <!-- Task2 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 2
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).</p>
+            <div class="mb-3">
+                <label for="userNumber" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userNumber" min="0" max="9">
+                <div class="form-text">Enter number from 0 to 9</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="showSymbol()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="userSymbol"></span>
+        </div>
+    </div>
+    <!-- Task3 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 3
+        </div>
+        <div class="card-body">
+            <p class="card-text">Підрахуй суму всіх чисел в заданому користувачем діапазоні.</p>
+            <div class="mb-3">
+                <label for="rangeStart" class="form-label">Range start</label>
+                <input type="number" class="form-control" id="rangeStart">
+                <label for="rangeEnd" class="form-label">Range end</label>
+                <input type="number" class="form-control" id="rangeEnd">
+                <div class="form-text">Enter range</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="sumRange()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="rangeSum"></span>
+        </div>
+    </div>
+    <!-- Task4 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 4
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача 2 числа і знайди найбільший спільний дільник.</p>
+            <div class="mb-3">
+                <label for="number1" class="form-label">Number 1</label>
+                <input type="number" class="form-control" id="number1">
+                <label for="number2" class="form-label">Number 2</label>
+                <input type="number" class="form-control" id="number2">
+                <div class="form-text">Enter numbers</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="caclNumbers()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="maxDivisor"></span>
+        </div>
+    </div>
+    <!-- Task5 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 5
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача число і виведи всі дільники цього числа.</p>
+            <div class="mb-3">
+                <label for="userNumber2" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userNumber2">
+                <div class="form-text">Enter number</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcNumber2()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="divisors"></span>
+        </div>
+    </div>
+    <!-- Task6 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 6
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача п’ятирозрядне число і визначи, чи є воно паліндромом.</p>
+            <div class="mb-3">
+                <label for="userPalindrom" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userPalindrom" min="10000" max="99999">
+                <div class="form-text">Enter number</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="isPalindrom()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="palindromResult"></span>
+        </div>
+    </div>
+    <!-- Task7 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 7
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:
+            <ol>
+                <li>від 200 до 300 - знижка буде 3%;</li>
+                <li>від 300 до 500 - 5%;</li>
+                <li>від 500 і вище - 7%.</li>
+            </ol>
+            </p>
+            <div class="mb-3">
+                <label for="shoppingSum" class="form-label">Your sum</label>
+                <input type="number" class="form-control" id="shoppingSum">
+                <div class="form-text">Enter sum</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcDiscount()">Run</button>
+        </div>
+        <div class="card-footer">
+            Your sum to pay: <span id="userToPay"></span>
+        </div>
+    </div>
+    <!-- Task8 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 8
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.</p>
+            <button type="button" class="btn btn-primary" onclick="calcStats()">Run</button>
+        </div>
+        <div class="card-footer">
+            Numbers stats: <span id="userStats"></span>
+        </div>
+    </div>
+    <!-- Task9 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 9
+        </div>
+        <div class="card-body">
+            <p class="card-text">Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.</p>
+            <button type="button" class="btn btn-primary" onclick="nameDays()">Run</button>
+        </div>
+    </div>
+    <!-- Task10 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 10
+        </div>
+        <div class="card-body">
+            <p class="card-text">Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача «Ваше число &gt; N, &lt; N або == N?». Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний пошук").</p>
+            <button type="button" class="btn btn-primary" onclick="guessNumber()">Run</button>
+        </div>
+    </div>
+    <!-- Task11 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 11
+        </div>
+        <div class="card-body">
+            <p class="card-text">Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.</p>
+            <button type="button" class="btn btn-primary" onclick="calcTable()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <table id="numTable">
+            </table>
+        </div>
+    </div>
+    <!-- Task12 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 12
+        </div>
+        <div class="card-body">
+            <p class="card-text">Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.</p>
+            <div class="mb-3">
+                <label for="userDate" class="form-label">Your date</label>
+                <input type="number" class="form-control" id="userDate" min="1" max="31">
+                <div class="form-text">Enter date</div>
+
+                <label for="userMonth" class="form-label">Your month</label>
+                <input type="number" class="form-control" id="userMonth" min="1" max="12">
+                <div class="form-text">Enter month (e.g. 1, 2, 12)</div>
+
+                <label for="userYear" class="form-label">Your year</label>
+                <input type="number" class="form-control" id="userYear" min="0">
+                <div class="form-text">Enter year</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="nextDay()">Run</button>
+        </div>
+        <div class="card-footer">
+            Next day is: <span id="dayResult"></span>
+        </div>
+    </div>
+
+    <script src="lesson3.js"></script>
+</body>
+
+</html>

@@ -8,7 +8,7 @@ let imya-pol'zovateya
 let !name
 let nameofourpreciouscustomer*/
 //let имя
-
+{
 
 firstName = prompt("Enter your name");
 alert(`Hello, ${firstName}!`);
@@ -47,3 +47,4 @@ const CONVERT_COURSE = 0.96;
 let dollars = prompt("Enter dollars");
 let euros = dollars * CONVERT_COURSE;
 alert(`You have ${euros} euros`);
+}
