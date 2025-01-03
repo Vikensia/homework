@@ -9,7 +9,6 @@ function startRound() {
     task1 = Math.round(task1);
     task1 = task1 / 100;
     byId('task1').innerHTML = `<span style="color: blue">${task1}</span>`
-    return task1
 }
 
 //task 2
@@ -19,12 +18,11 @@ function startSum() {
     x = Number(x);
     let z = x + y;
     byId('z').innerHTML = `<span style="color: blue">${z}</span>`
-    return z;
 }
 
 //task3
 function caclFiles() {
-const FILE_SIZE = 820;
+    const FILE_SIZE = 820;
     let userStorageGb = byId('userStorageGb').valueAsNumber;
     if (isNaN(userStorageGb) || userStorageGb < 0) {
         byId('filesNumber').innerHTML = `<span style="color: red">Invalid number</span>`;
@@ -33,7 +31,6 @@ const FILE_SIZE = 820;
         let filesNumber = userStorageMb / FILE_SIZE;
         filesNumber = Math.floor(filesNumber);
         byId('filesNumber').innerHTML = `<span style="color: blue">${filesNumber}</span>`
-        return filesNumber;
     }
 }
 
@@ -44,18 +41,15 @@ function caclChocolates() {
     if (isNaN(userMoney) || isNaN(chocolatePrice) || userMoney < 0 || chocolatePrice < 0) {
         byId('chocolatesNumber').innerHTML = `<span style="color: red">Invalid number</span>`
         byId('moneyLeft').innerHTML = `<span></span>`
-        return;
     } else if (chocolatePrice === 0) {
         byId('chocolatesNumber').innerHTML = `<span style="color: blue">Free chocolates for everyone!</span>`;
         byId('moneyLeft').innerHTML = `<span style="color: blue">${userMoney} money left.</span>`
-    }
-    else {
+    } else {
         let chocolatesNumber = Math.floor(userMoney / chocolatePrice);
         let moneyLeft = userMoney - chocolatesNumber * chocolatePrice;
         moneyLeft = Math.round(moneyLeft * 100) / 100;
         byId('chocolatesNumber').innerHTML = `<span style="color: blue">You can buy ${chocolatesNumber} chocolates.</span>`
         byId('moneyLeft').innerHTML = `<span style="color: blue">${moneyLeft} money left.</span>`
-        return;
     }
 }
 
@@ -70,7 +64,6 @@ function startReverse() {
         let firstNumber = String(Math.floor(userNumber / 100));
         let userNumberReversed = lastNumber + secondNumber + firstNumber;
         byId('userNumberReversed').innerHTML = `<span style="color: blue">${userNumberReversed}</span>`
-        return userNumberReversed;
     }
 }
 
@@ -84,6 +77,5 @@ function calcProfit() {
         let userProfit = userDeposit * PROFIT_PERCENT_YEAR / 100 / 12 * 2;
         userProfit = Math.round(userProfit * 100) / 100;
         byId('userProfit').innerHTML = `<span style="color: blue">${userProfit}</span>`
-        return userProfit;
     }
 }
