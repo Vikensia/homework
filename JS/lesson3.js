@@ -253,45 +253,25 @@ function nameDays() {
 //task10
 //Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і питай у користувача «Ваше число> N, <N або == N?». Залежно від того що вказав користувач, зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо користувач вказав, що його число> 50, то зміни діапазон на від 50 до 100. І так до тих пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний пошук").
 
-
 function guessNumber() {
-    let userNumber = 100;
-    const userMax = 100;
-    const userMin = 0;
-    let delta = 50;
+    let min = 0;
+    let max = 100;
+    let userNumber;
     let result;
-    userNumber = userNumber / 2;
 
-    function answerMore() {
-        result = window.confirm(`Ваше число більше ${userNumber}?`)
+    while (true) {
+        userNumber = Math.floor((min + max) / 2);
+
+        result = window.confirm(`Ваше число - це ${userNumber}?`)
+
         if (result) {
-            delta = Math.ceil(delta / 2);
-            userNumber += delta;
+            alert(`Отже ваше число ${userNumber}`)
+            break
+        } else if (confirm(`Ваше число більше ${userNumber}? ОК якщо "так", відміна якщо "ні"`)) {
+            min = userNumber + 1;
         } else {
-            result = window.confirm(`Ваше число менше ${userNumber}?`)
-            if (result) {
-                delta = Math.floor(delta / 2);
-                userNumber -= delta;
-                if (userNumber <= 3) {
-                    userNumber -= 1;
-                }
-            }
+                max = userNumber - 1;
         }
-    }
-
-    do {
-        answerMore(userNumber)
-    }
-    while (result && userNumber < 100 && userNumber > 0)
-    
-    alert(`Ваше число ${userNumber}`)
-    
-    if (userNumber > 99) {
-        alert(`Ваше число ${userMax}`)
-    }
-
-    if (userNumber < 1) {
-        alert(`Ваше число ${userMin}`)
     }
 }
 
@@ -381,6 +361,6 @@ function nextDay() {
     } else {
         nextDay();
         nextMonth();
-        byId('dayResult').innerHTML = `<span style="color: blue">DATE: ${newDate}, MONTH: ${newMonth}, YEAR: ${userYear}</span>`
+        byId('dayResult').innerHTML = `<span style="color: blue">DATE: ${newDate}, MONTH: ${newMonth}, YEAR: ${userYear}. ${newDate}.${newMonth}.${userYear}</span>`
     }
 }
