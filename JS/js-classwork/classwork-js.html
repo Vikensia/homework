@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .my-toast {
+            max-width: 400px;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            z-index: 1000;
+        }
+
+        .my-toast.my-toast-success {
+            background-color: lightgreen;
+            border-color: green;
+        }
+
+        .my-toast.my-toast-error {
+            background-color: lightcoral;
+            border-color: tomato;
+        }
+
+        .my-toast.my-toast-warning {
+            background-color: lightyellow;
+            border-color: yellowgreen;
+        }
+
+        .my-toast.my-toast-info {
+            background-color: lightblue;
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card mb-5" style="width: 50%; margin-inline: auto;">
+        <div class="card-header">
+            Task 1
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <input type="text" class="form-control" id="prodTitle" placeholder="Title">
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" id="prodPrice" placeholder="Price">
+                </div>
+                <div class="col-2">
+                    <input type="number" class="form-control" id="prodQty" placeholder="Quantity" value="1">
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn btn-primary" onclick="checkAndAddToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            Result: <span id="compareResult"></span>
+        </div>
+    </div>
+    <div class="card" style="width: 50%; margin-inline: auto;">
+        <div class=" card-header">
+            <h4>Products in cart</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Paid</th>
+                        <th>Price</th>
+                        <th>Qty.</th>
+                        <th>Total</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product_list"></tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="5"></th>
+                        <th id="cartTotal"></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="toast.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
