@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Функції</h1>
+    <!-- Task1 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 1
+        </div>
+        <div class="card-body">
+            <p class="card-text">Створи функцію, яка буде виводити кількість переданих їй аргументів.</p>
+            <button type="button" class="btn btn-primary" onclick="calcArguments()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="argumentsQty"></span>
+        </div>
+    </div>
+    <!-- Task2 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 2
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка приймає 2 числа і повертає :</p>
+            <ul>
+                <li>-1, якщо перше число менше, ніж друге;</li>
+                <li>1 - якщо перше число більше, ніж друге;</li>
+                <li>0 - якщо числа рівні.</li>
+            </ul>
+            <div class="mb-3">
+                <label for="userNumber1" class="form-label">Your number 1</label>
+                <input type="number" class="form-control" id="userNumber1">
+                <label for="userNumber2" class="form-label">Your number 2</label>
+                <input type="number" class="form-control" id="userNumber2">
+                <div class="form-text">Enter numbers</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="compareResultHTML()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="compareResult"></span>
+        </div>
+    </div>
+    <!-- Task3 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 3
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка обчислює факторіал переданого їй числа.</p>
+            <div class="mb-3">
+                <label for="userFactorial" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userFactorial">
+                <div class="form-text">Enter number</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcFactorial()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="factorialResult"></span>
+        </div>
+    </div>
+    <!-- Task4 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 4
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. Наприклад: цифри 1, 4, 9 перетворяться в число 149.</p>
+            <div class="mb-3">
+                <label for="userFirst" class="form-label">Your number 1</label>
+                <input type="number" class="form-control" id="userFirst">
+                <label for="userSecond" class="form-label">Your number 2</label>
+                <input type="number" class="form-control" id="userSecond">
+                <label for="userThird" class="form-label">Your number 3</label>
+                <input type="number" class="form-control" id="userThird">
+                <div class="form-text">Enter numbers</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="mixNumbers()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="mixNumbers"></span>
+        </div>
+    </div>
+    <!-- Task5 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 5
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.</p>
+            <div class="mb-3">
+                <label for="side1" class="form-label">Side 1</label>
+                <input type="number" class="form-control" id="side1">
+                <label for="side2" class="form-label">Side 2</label>
+                <input type="number" class="form-control" id="side2">
+                <div class="form-text">Enter parameters</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcSides()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="area"></span>
+        </div>
+    </div>
+    <!-- Task6 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 6
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.</p>
+            <div class="mb-3">
+                <label for="userPerfect" class="form-label">Your number</label>
+                <input type="number" class="form-control" id="userPerfect">
+                <div class="form-text">Enter number</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="checkPerfect()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="perfectResult"></span>
+        </div>
+    </div>
+    <!-- Task7 -->
+    <div class="card mb-3" style="width: 33%; margin-inline: auto;">
+        <div class="card-header">
+            Task 7
+        </div>
+        <div class="card-body">
+            <p class="card-text">Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.</p>
+            <div class="mb-3">
+                <label for="userPerfectMin" class="form-label">Enter min range number</label>
+                <input type="number" class="form-control" id="userPerfectMin">
+                <label for="userPerfectMax" class="form-label">Enter max range number</label>
+                <input type="number" class="form-control" id="userPerfectMax">
+                <div class="form-text">Enter numbers</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcPerfectNumbers()">Run</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="perfectNumbers"></span>
+        </div>
+    </div>
+
+
+
+
+    <script src="lesson4.js"></script>
+</body>
+
+</html>
