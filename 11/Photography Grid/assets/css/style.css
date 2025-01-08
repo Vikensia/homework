@@ -138,8 +138,6 @@ figcaption {
     z-index: 1;
 }
 
-
-
 .item::after {
     height: 100%;
     background-image: linear-gradient(to top, #241F24 0%, rgba(91, 91, 91, .45) 34%, rgba(187, 186, 192, .26) 63%);
@@ -150,7 +148,6 @@ figcaption {
     background-image: linear-gradient(to top, #241F24, transparent);
     opacity: 0;
 }
-
 
 .item:hover::after {
     opacity: 0;
