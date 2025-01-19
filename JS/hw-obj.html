@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Objects</h1>
+    <!-- Task1 -->
+    <div class="mb-3" style="width: 50%; margin-inline: auto; display: flex; gap: 20px;">
+        <div class="card" style="width: 50%;">
+            <div class="card-header">
+                Task 1
+            </div>
+            <div class="card-body">
+                <p class="card-text">Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії), і наступні методи для роботи з цим об'єктом:</p>
+                <ul>
+                    <li>Метод, який виводить на екран інформацію про автомобіль.</li>
+                    <li>Додавання ім’я водія у список</li>
+                    <li>Перевірка водія на наявність його ім’я у списку</li>
+                    <li>Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину.</li>
+                </ul>
+                <button type="button" class="btn btn-primary" onclick="auto.showInfo()">Show my auto</button>
+                <button type="button" class="btn btn-primary" onclick="auto.addDriver()">Add driver</button>
+
+            </div>
+            <div class="card-footer">
+                Result: <span id="argumentsQty"></span>
+            </div>
+        </div>
+        <div class="carInfo card pt-3" style="width: 50%;"></div>
+    </div>
+    <!-- Task2 -->
+    <div class="card mb-3" style="width: 50%; margin-inline: auto;">
+        <div class="card-header">
+            Task 2
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                Створити об'єкт, що описує час (години, хвилини, секунди), і такі функції для роботи з цим об'єктом:
+            </p>
+            <ul>
+                <li>Для виведення часу на екран.</li>
+                <li>Зміни часу на передану кількість секунд.</li>
+                <li>Зміни часу на передану кількість хвилин.</li>
+                <li>Зміни часу на передану кількість годин.</li>
+            </ul>
+            <p>Враховуйте, що в останніх 3-х функціях, при зміні однієї частини часу, може змінитися і інша. Наприклад: якщо до часу «20:59:45» додати 30 секунд, то повинно вийти «21:00:15», а не «20:59:75». Також потрібно передбачити можливість того що користувач може передати 150 секунд, або 75 хвилин.</p>
+            <div class="mb-3">
+                <label for="userHours" class="form-label">Hours</label>
+                <input type="number" class="form-control" id="userHours" min="0" max="23">
+                <div class="form-text">Enter start hours from 0 to 23</div>
+                <label for="userMinutes" class="form-label">Minutes</label>
+                <input type="number" class="form-control" id="userMinutes" min="0" max="59">
+                <div class="form-text">Enter start minutes from 0 to 59</div>
+                <label for="userSec" class="form-label">Seconds</label>
+                <input type="number" class="form-control" id="userSec" min="0" max="59">
+                <div class="form-text">Enter start seconds from 0 to 59</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="setUserTime()">Set time</button>
+            <button type="button" class="btn btn-primary btn-calc" onclick="calcHours()" disabled>Add hours</button>
+            <button type="button" class="btn btn-primary btn-calc" onclick="calcMinutes()" disabled>Add minutes</button>
+            <button type="button" class="btn btn-primary btn-calc" onclick="calcSeconds()" disabled>Add seconds</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="timeResult"></span>
+        </div>
+    </div>
+    <!-- Task3 -->
+    <div class="mb-3" style="width: 50%; margin-inline: auto; display: flex; gap: 20px;">
+        <div class="card" style="width: 50%;">
+            <div class="card-header">
+                Task 3
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії), і наступні методи для роботи з цим об'єктом:</p>
+                <ul>
+                    <li>Складання 2-х об'єктів-дробів.</li>
+                    <li>Віднімання 2-х об'єктів-дробів.</li>
+                    <li>Множення 2-х об'єктів-дробів.</li>
+                    <li>Ділення 2-х об'єктів-дробів.</li>
+                    <li>Скорочення об'єкта-дробу.</li>
+                </ul>
+                <p>(Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)</p>
+                <button type="button" class="btn btn-primary" onclick="auto.showInfo()">Show my auto</button>
+                <button type="button" class="btn btn-primary" onclick="auto.addDriver()">Add driver</button>
+
+            </div>
+            <div class="card-footer">
+                Result: <span id="argumentsQty"></span>
+            </div>
+        </div>
+        <div class="carInfo card pt-3" style="width: 50%;"></div>
+    </div>
+
+
+    <script src="hw-obj.js"></script>
+</body>
+
+</html>
