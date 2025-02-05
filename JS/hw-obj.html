@@ -24,9 +24,10 @@
                     <li>Перевірка водія на наявність його ім’я у списку</li>
                     <li>Підрахунок необхідного часу та кількості палива для подолання переданої відстані з середньою швидкістю. Враховуй, що через кожні 4 години дороги водієві необхідно робити перерву на 1 годину.</li>
                 </ul>
-                <button type="button" class="btn btn-primary" onclick="auto.showInfo()">Show my auto</button>
+                <button type="button" class="btn btn-primary" onclick="auto.showInfo()">Show auto</button>
                 <button type="button" class="btn btn-primary" onclick="auto.addDriver()">Add driver</button>
-
+                <button type="button" class="btn btn-primary btn-check-driver" onclick="auto.checkDriver()" disabled>Check driver</button>
+                <button type="button" class="btn btn-primary" onclick="auto.calcTime()">Calc time</button>
             </div>
             <div class="card-footer">
                 Result: <span id="argumentsQty"></span>
@@ -71,31 +72,38 @@
         </div>
     </div>
     <!-- Task3 -->
-    <div class="mb-3" style="width: 50%; margin-inline: auto; display: flex; gap: 20px;">
-        <div class="card" style="width: 50%;">
-            <div class="card-header">
-                Task 3
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                    Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії), і наступні методи для роботи з цим об'єктом:</p>
-                <ul>
-                    <li>Складання 2-х об'єктів-дробів.</li>
-                    <li>Віднімання 2-х об'єктів-дробів.</li>
-                    <li>Множення 2-х об'єктів-дробів.</li>
-                    <li>Ділення 2-х об'єктів-дробів.</li>
-                    <li>Скорочення об'єкта-дробу.</li>
-                </ul>
-                <p>(Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)</p>
-                <button type="button" class="btn btn-primary" onclick="auto.showInfo()">Show my auto</button>
-                <button type="button" class="btn btn-primary" onclick="auto.addDriver()">Add driver</button>
-
-            </div>
-            <div class="card-footer">
-                Result: <span id="argumentsQty"></span>
-            </div>
+    <div class="card mb-3" style="width: 50%; margin-inline: auto;">
+        <div class="card-header">
+            Task 3
         </div>
-        <div class="carInfo card pt-3" style="width: 50%;"></div>
+        <div class="card-body">
+            <p class="card-text">
+                Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:</p>
+            <ul>
+                <li>Складання 2-х об'єктів-дробів.</li>
+                <li>Віднімання 2-х об'єктів-дробів.</li>
+                <li>Множення 2-х об'єктів-дробів.</li>
+                <li>Ділення 2-х об'єктів-дробів.</li>
+                <li>Скорочення об'єкта-дробу.</li>
+            </ul>
+            <p>(Тобі потрібно буде створити ще деякі методи не зазначені в завданні, для отримання математично правильної відповіді)</p>
+            <div class="mb-3">
+                <label for="userFraction1" class="form-label">Your fraction1</label>
+                <input type="text" class="form-control" id="userFraction1">
+                <label for="userFraction2" class="form-label">Your fraction2</label>
+                <input type="text" class="form-control" id="userFraction2">
+                <div class="form-text">Enter fractions, e.g "1/3"</div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="fractionMethods.add()">Addition</button>
+            <button type="button" class="btn btn-primary" onclick="fractionMethods.subtr()">Subtraction</button>
+            <button type="button" class="btn btn-primary" onclick="fractionMethods.multi()">Multiplication</button>
+            <button type="button" class="btn btn-primary" onclick="fractionMethods.div()">Division</button>
+            <button type="button" class="btn btn-success btn-reduction" onclick="fractionMethods.red()" disabled>Result reduction</button>
+        </div>
+        <div class="card-footer">
+            Result: <span id="mathResult"></span>
+        </div>
+    </div>
     </div>
 
 
